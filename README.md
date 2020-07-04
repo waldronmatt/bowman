@@ -2,8 +2,6 @@
 
 ### A simple static site generator powered by Node.js, Webpack, and Browsersync
 
-https://waldronmatt.github.io/bowman/
-
 ## Getting Started
 
 Install:
@@ -25,6 +23,9 @@ Run dev environment:
 Build and serve for production:
 
         npm run build
+
+## Documentation
+[Official Bowman Docs](https://waldronmatt.github.io/bowman/)
 
 ## License
 
