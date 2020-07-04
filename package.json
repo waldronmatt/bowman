@@ -1,6 +1,6 @@
 {
   "name": "@waldronmatt/bowman",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A simple static site generator powered by Node.js, Webpack, and Browsersync",
   "main": "src/index.js",
   "bin": {
