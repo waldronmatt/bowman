@@ -2,8 +2,8 @@ title: Bowman
 description: >- # this means to ignore newlines until "baseurl:"
   A simple static site generator powered by Node.js, Webpack, and Browsersync
 
-url: waldronmatt.github.io
 baseurl: /bowman
+url: https://waldronmatt.github.io
 
 # Theme
 # theme: "just-the-docs"
