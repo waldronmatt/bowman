@@ -12,7 +12,7 @@ nav_order: 1
 
 Install:
 
-        npm i @waldronmatt/bowman
+        npm i -g @waldronmatt/bowman
 
 Create project:
 
