@@ -1,0 +1,88 @@
+{
+  
+  "0": {
+    "title": "",
+    "content": "404 . Page not found :( . The requested page could not be found. .",
+    "url": "http://localhost:4000/404.html",
+    "relUrl": "/404.html"
+  }
+  ,"1": {
+    "title": "About",
+    "content": "About . What is Bowman? . Bowman is a simple static generator. That’s it! . Why use Bowman? . Spend more time developing and less time configuring with Bowman’s Webpack and Browserync integration. . The benefits: . Have your page markup generated automatically | Develop quicker with Webpack + Browsersync hot-reloading | Assets are compiled and optimized automatically so you’re production ready | . Who is Bowman for? . Bowman is great for small to medium sized static websites and personal projects. . Those looking for more options and support for more templating languages may want to consider Eleventy. . Other popular choices include Hugo and Gatsby. .",
+    "url": "http://localhost:4000/about",
+    "relUrl": "/about"
+  }
+  ,"2": {
+    "title": "EJS Structure",
+    "content": "EJS Structure . src/ static/ ejs/ components/ layouts/ pages/ partials/ templates/ . components - markup that can be reused on your site. . layouts - shared html markup for the main parts of your site (head, header, navigation, footer). . pages - markup specific to a particular page. . partials - group related components together via multiple ejs includes. Useful for blog posts, articles, etc. . templates - ejs calls to the main parts of your site (head, header, navigation, footer). .",
+    "url": "http://localhost:4000/site-structure/ejs-structure",
+    "relUrl": "/site-structure/ejs-structure"
+  }
+  ,"3": {
+    "title": "Essential Files",
+    "content": "Essential Files . Bowman offers flexibility with how you want to structure your project files. However, there are a few critical files that are required for your site to work properly. . Everything under /scripts . These files contain Bowman’s webpack configuration files, HTML markup generator scripts, and live server/reload configurations. . The src/build directory . build/ content/ index.ejs data/ index.json . Bowman’s HTML generator looks for matching file names under content/ and data/ directories. A 1:1 relationship of content and data for a page must exist or the build process will fail. . You can structure your pages however you’d like; as long as the directory structure of content/ matches data/ and vice versa. . site.json . src/ static/ json/ site.json . . { &quot;title&quot;: &quot;Bowman&quot;, &quot;description&quot;: &quot;Simple static site generator powered by Node.js and Webpack&quot;, &quot;keywords&quot; : &quot;bowman, static site generator, nodejs, javascript, webpack, browsersync&quot; } . site.json supplies metadata shared by pages in your project. Edit scripts/utils/config.js if you want to customize how this data is handled. . default.ejs . src/ static/ ejs/ templates/ default.ejs . . &lt;!DOCTYPE html&gt; &lt;html lang=&quot;en-US&quot;&gt; &lt;head&gt; &lt;%- include(&#39;../layouts/head&#39;) %&gt; &lt;/head&gt; &lt;body&gt; &lt;%- include(&#39;../layouts/header&#39;) %&gt; &lt;%- body %&gt; &lt;%- include(&#39;../layouts/footer&#39;) %&gt; &lt;/body&gt; &lt;/html&gt; . default.ejs is the fallback page template option for Bowman’s HTML markup generator. You can change the default behavior by editing scripts/buildMarkup.js: . // render template const template = pageContent.attributes.template || &#39;default&#39;; . app.js, app.scss . src/ static/ js/ app.js src/ static/ scss/ app.scss . Bowman recursively searches your project for js/scss files that do not contain an underscore preceding the file name. These files are used as Webpack’s entry points for serving your code. . All other files with underscores preceding the file name can be structured to your liking, but should ultimately be called in your entry points for serving: . app.js . // Layouts import &#39;./layouts/_footer&#39;; ... . app.scss . // Abstracts @import &#39;abstracts/variables&#39;, &#39;abstracts/mixins&#39;, &#39;abstracts/breakpoints&#39;; ... . You can safely rename *app.js and app.scss to something more suitable for your project, however, it is not recommended removing these files entirely. . *Note: Update scripts/webpack/webpack.common.prebuild.js . entry: [&#39;./src/static/js/app.js&#39;], . You can create additional files without underscores to signify assets you want imported separately from your main entry points. Click here to read more. .",
+    "url": "http://localhost:4000/essential-files",
+    "relUrl": "/essential-files"
+  }
+  ,"4": {
+    "title": "FAQ",
+    "content": "Frequently Asked Questions . What is the minimum structure I need for Bowman to work? . scripts/ ... src/ build/ content/ ... data/ ... static/ ejs/ templates/ default.ejs js/ app.js json/ site.json scss/ app.scss .eslintignore .eslintrc .stylelintrc.json postcss.config.js package.json package-lock.json . How do I set up additional entry points? . To set up additional entry points, simply create a new js/scss file without an underscore preceding the filename. Bowman will recursively look for these files and feed into webpack, so the directory structure is completely up to you: . src/ static/ js/ some-directory/ my-custom-code.js scss/ folder/ another-folder/ my-custom-code.scss . Creating custom entry points can be useful in several situations. For example, you might want to keep vendor code used on a few pages separate from your main bundle. Or you might want to do the same for pages with custom code. . How do I reference images in my project? . A basic example: . index.ejs . &quot;pictures&quot;: [ { &quot;picture&quot;: &quot;some-folder/pic1&quot; }, { &quot;picture&quot;: &quot;some-folder/pic2&quot; }, { &quot;picture&quot;: &quot;a-different-folder/pic1&quot; } ] &lt;br&gt; . index.json . Bowman uses a manifest file to map images to take advantage of Webpack’s contenthash feature to prevent caching when running production builds. . &lt;% data.pictures.forEach((el) =&gt; { %&gt; &lt;img src=&quot;&lt;%= site.imagesManifest[`static/images/${el.picture}`] %&gt;&quot;&gt; &lt;% }) %&gt; &lt;br&gt; . Site Structure: . scripts/ ... src/ build/ content/ index.ejs data/ index.json static/ images/ some-folder/ pic1 pic2 a-different-folder/ pic1 . Where does the name Bowman come from? . The project name comes from the character Dr. David Bowman in Arthur C. Clarke’s 2001 Space Odyssey. .",
+    "url": "http://localhost:4000/faq",
+    "relUrl": "/faq"
+  }
+  ,"5": {
+    "title": "",
+    "content": "Bowman . A simple static site generator powered by Node.js, Webpack, and Browsersync . Getting Started . Install: . npm i @waldronmatt/bowman . Create project: . create-bowman-starter -y . Install dependencies: . npm install . Run dev environment: . npm run dev . Build and serve for production: . npm run build .",
+    "url": "http://localhost:4000/",
+    "relUrl": "/"
+  }
+  ,"6": {
+    "title": "JS Structure",
+    "content": "JS Structure . src/ static/ ejs/ components/ helpers/ layouts pages/ vendors/ app.js . components - component-specific scripts. . helpers - general-purpose scripts not tied to a particular component. . layouts - scripts specific to the main parts of your site (head, header, navigation, footer). . pages - scripts specific to a particular page. . vendors - external scripts. . app.scss - js entrypoint for your site. .",
+    "url": "http://localhost:4000/site-structure/js-structure",
+    "relUrl": "/site-structure/js-structure"
+  }
+  ,"7": {
+    "title": "JSON Structure",
+    "content": "JSON Structure . src/ static/ json/ components/ layouts/ site.json . components - data specific to components. . layouts - data specific to site layouts. . site.json - data shared across the entire site (title, description, keywords, etc). .",
+    "url": "http://localhost:4000/site-structure/json-structure",
+    "relUrl": "/site-structure/json-structure"
+  }
+  ,"8": {
+    "title": "Layouts",
+    "content": "Layouts . Layouts contain shared html markup for the main parts of your site (head, header, navigation, footer). Define a custom layout for your page template by creating one and calling it: . src/ static/ ejs/ layouts/ navigation . default.ejs . &lt;!DOCTYPE html&gt; &lt;html lang=&quot;en-US&quot;&gt; &lt;head&gt; ... &lt;/head&gt; &lt;body&gt; &lt;%- include(&#39;../layouts/navigation&#39;) %&gt; &lt;%- body %&gt; ... &lt;/body&gt; &lt;/html&gt; . Note: It is generally good practice to reference global css tags in the head and global js scripts right before the closing body tag. You will find these files reference in the head and footer layouts respectively. .",
+    "url": "http://localhost:4000/layouts.html",
+    "relUrl": "/layouts.html"
+  }
+  ,"9": {
+    "title": "Page Includes",
+    "content": "Page Includes . Page includes refer to your page markup. . Partials / Components . Reference page components or partials (groupings of components) for reuse: . src/ static/ ejs/ partials/ basic-content.ejs components/ features.ejs heading.ejs . Partials make it easier to create pages with similar component groupings. basic-content.ejs . &lt;%- include(&#39;../components/heading&#39;) %&gt; &lt;%- include(&#39;../components/features&#39;) %&gt; . heading.ejs . &lt;h1&gt;&lt;%= data.info.header %&gt;&lt;/h1&gt; &lt;div class=&quot;container&quot;&gt; &lt;p&gt;&lt;%= data.info.description %&gt;&lt;/p&gt; &lt;/div&gt; . features.ejs . &lt;div class=&quot;container&quot;&gt; &lt;a href=&quot;&lt;%= data.info.link.href %&gt;&quot;&gt;&lt;%= data.info.link.text %&gt;&lt;/a&gt; &lt;ul&gt; &lt;% data.info.features.forEach((el) =&gt; { %&gt; &lt;li&gt;&lt;%= el.list %&gt;&lt;/li&gt; &lt;% }) %&gt; &lt;/ul&gt; &lt;/div&gt; . . Pages . It is recommended to keep custom page markup inside the pages directory: . src/ static/ ejs/ pages/ 404.ejs . 404.ejs . &lt;h1&gt;&lt;%= data.info.header %&gt;&lt;/h1&gt; &lt;div class=&quot;container&quot;&gt; &lt;h2&gt;&lt;%= data.info.description %&gt;&lt;/h2&gt; &lt;/div&gt; .",
+    "url": "http://localhost:4000/page-includes.html",
+    "relUrl": "/page-includes.html"
+  }
+  ,"10": {
+    "title": "Creating Pages",
+    "content": "Creating New Pages . Create new pages under the content directory. . build/ content/ index.ejs . Pages contain page includes and a page template declaration. index.ejs . template: your-custom-page-template &lt;%- include(site.ejsPath + &#39;components/your-custom-component&#39;) %&gt; . Options: Page templates Page includes Page data is stored under the data directory and injected into your components/pages. . build/ data/ index.json . index.json . { &quot;title&quot;: &quot;Hello World!&quot;, &quot;info&quot;: { &quot;header&quot;: &quot;Bowman&quot;, &quot;description&quot;: &quot;Create static sites using...&quot;, &quot;link&quot;: { &quot;text&quot;: &quot;Click here to read the documentation.&quot;, &quot;href&quot;: &quot;https://www.myprojectsite.com&quot; }, &quot;features&quot;: [ { &quot;list&quot;: &quot;Keep things DRY:...&quot; }, { &quot;list&quot;: &quot;Separation of concerns:...&quot; }, { &quot;list&quot;: &quot;Use familiar languages and linters:...&quot; }, { &quot;list&quot;: &quot;Develop faster:...&quot; }, { &quot;list&quot;: &quot;Be production-ready:...&quot; } ] } } . . Note: content and data file/folder structures must match. In other words, a 1:1 relationship of content and data for a page must exist: . build/ content/ index.ejs data/ index.json .",
+    "url": "http://localhost:4000/pages.html",
+    "relUrl": "/pages.html"
+  }
+  ,"11": {
+    "title": "SCSS Structure",
+    "content": "SCSS Structure . Bowman’s default scss structure is based on Hugo Giraudel’s SCSS 7-1 architecture pattern. Click here to learn more. . src/ static/ scss/ abstracts/ base/ components/ layouts/ pages/ vendors/ app.scss . app.scss - css entrypoint for your site. .",
+    "url": "http://localhost:4000/site-structure/scss-structure",
+    "relUrl": "/site-structure/scss-structure"
+  }
+  ,"12": {
+    "title": "Site Structure",
+    "content": "Site Structure . / dist/ scripts/ src/ package.json . src/ . build - the directory Bowman looks for to build HTML markup . content - website page containers | data - website page data | . src/ build/ content/ index.ejs about.ejs custom-folder/ contact.ejs data/ index.json about.json custom-folder/ contact.json . static - project assets . ejs - page components | json - shared data | . src/ static/ docs/ ejs/ fonts/ images/ js/ json/ scss/ favicon .",
+    "url": "http://localhost:4000/site-structure/",
+    "relUrl": "/site-structure/"
+  }
+  ,"13": {
+    "title": "Page Templates",
+    "content": "Page Templates . Page templates contain ejs calls to the main parts of your site (head, header, navigation, footer). Define a custom template for your page by creating one and calling it: . src/ static/ ejs/ templates/ basic.ejs . index.ejs . template: basic . Note: Pages will use default.ejs via /src/static/ejs/templates if none specified. default.ejs . &lt;!DOCTYPE html&gt; &lt;html lang=&quot;en-US&quot;&gt; &lt;head&gt; &lt;%- include(&#39;../layouts/head&#39;) %&gt; &lt;/head&gt; &lt;body&gt; &lt;%- include(&#39;../layouts/header&#39;) %&gt; &lt;%- body %&gt; &lt;%- include(&#39;../layouts/footer&#39;) %&gt; &lt;/body&gt; &lt;/html&gt; . Click here for information on creating layouts. .",
+    "url": "http://localhost:4000/templates.html",
+    "relUrl": "/templates.html"
+  }
+  
+}
