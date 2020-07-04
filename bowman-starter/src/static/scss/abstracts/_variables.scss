@@ -1,0 +1,32 @@
+// Text defaults
+/// @type List
+$font-type: 'Tajawal', sans-serif !default;
+
+/// @type number
+$default-font-size: 1.25em !default;
+
+/// @type number
+$default-margin: 0.7em !default;
+
+/// @type number
+$default-line-height: 1.625em !default;
+
+// Website color scheme
+/// @type Color
+$black: #000 !default;
+
+/// @type Color
+$white: #fff !default;
+
+/// @type Color
+$dark-blue: #333a56 !default;
+
+/// @type Color
+$light-blue: #52658f !default;
+
+// Screen size variables
+$screen-xs-min: 320px;
+$screen-sm-min: 480px;
+$screen-md-min: 768px;
+$screen-lg-min: 1024px;
+$screen-xl-min: 1440px;

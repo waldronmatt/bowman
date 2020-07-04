@@ -1,0 +1,38 @@
+/*
+Structure based on Hugo Giraudel's sass boilerplate
+https://github.com/HugoGiraudel/sass-boilerplate
+*/
+
+@charset "UTF-8";
+
+/* Abstracts */
+@import
+  'abstracts/variables',
+  'abstracts/mixins',
+  'abstracts/breakpoints';
+
+/* Core Vendors */
+@import
+  'vendors/normalize';
+
+/* Base */
+@import
+  'base/base',
+  'base/fonts',
+  'base/typography';
+
+/* Layouts */
+
+/* Page specific styles */
+
+/*
+These files are called seperately to avoid merging into the main stylesheet.
+*/
+
+/* Components */
+
+/* Vendors */
+
+/*
+Vendor files can either be imported here or called seperately.
+*/

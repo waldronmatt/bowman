@@ -1,0 +1,5 @@
+{ 
+  "title": "Bowman",
+  "description": "Simple static site generator powered by Node.js and Webpack",
+  "keywords" : "bowman, static site generator, nodejs, javascript, webpack, browsersync"
+}
