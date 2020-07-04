@@ -1,12 +1,11 @@
 title: Bowman
 description: >- # this means to ignore newlines until "baseurl:"
   A simple static site generator powered by Node.js, Webpack, and Browsersync
-github_username:  waldronmatt
 
-# Remote Setting
-baseurl: "/guidelines"
-# url: ""
+url: waldronmatt.github.io
+baseurl: /bowman
 
 # Theme
 # theme: "just-the-docs"
 remote_theme: pmarsceill/just-the-docs
+color_scheme: "dark"
