@@ -1,1 +1,12 @@
-theme: jekyll-theme-minimal
+title: Bowman
+description: >- # this means to ignore newlines until "baseurl:"
+  A simple static site generator powered by Node.js, Webpack, and Browsersync
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
+github_username:  waldronmatt
+
+# Build settings
+theme: just-the-docs
+color_scheme: "dark"
+plugins:
+  - jekyll-feed
