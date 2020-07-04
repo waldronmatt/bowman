@@ -1,7 +1,7 @@
 ---
 layout: default
 title: About
-nav_order: 1
+nav_order: 2
 has_children: false
 permalink: /about
 ---
@@ -26,7 +26,7 @@ The benefits:
 
 Bowman is great for small to medium sized static websites and personal projects. 
 
-Those looking for more options and support for more templating languages may want to consider Eleventy.
+Those looking for more options and greater templating support may want to consider Eleventy.
 
 Other popular choices include Hugo and Gatsby.
 

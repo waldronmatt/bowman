@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Page Templates
-nav_order: 4
+nav_order: 5
 ---
 
 # Page Templates
@@ -45,4 +45,4 @@ default.ejs
         </html>
 
 <br>
-[Click here](/layouts) for information on creating layouts.
+[Click here](/bowman/layouts) for information on creating layouts.

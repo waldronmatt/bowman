@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Site Structure
-nav_order: 6
+nav_order: 7
 has_children: true
 permalink: /site-structure/
 ---

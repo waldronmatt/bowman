@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Creating Pages
-nav_order: 2
+nav_order: 3
 ---
 
 # Creating New Pages
@@ -27,9 +27,9 @@ index.ejs
 <br>
 **Options:**
 <br>
-[Page templates](/templates)
+[Page templates](/bowman/templates)
 <br>
-[Page includes](/page-includes)
+[Page includes](/bowman/page-includes)
 <br>
 <br>
 <br>

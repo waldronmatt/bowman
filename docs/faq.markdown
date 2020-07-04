@@ -1,7 +1,7 @@
 ---
 layout: default
 title: FAQ
-nav_order: 8
+nav_order: 9
 has_children: false
 permalink: /faq
 ---
@@ -15,8 +15,10 @@ permalink: /faq
         src/
             build/
                 content/
+                    index.ejs
                     ...
                 data/
+                    index.json
                     ...
             static/
                 ejs/
@@ -72,7 +74,7 @@ A basic example:
 
 ### index.json
 
-Bowman uses a manifest file to map images to take advantage of Webpack's contenthash feature to prevent caching when running production builds.
+Bowman uses a manifest file to map images to take advantage of Webpack's contenthash feature that prevents caching.
 
         <% data.pictures.forEach((el) => { %>
             <img src="<%= site.imagesManifest[`static/images/${el.picture}`] %>">

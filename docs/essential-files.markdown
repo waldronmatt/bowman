@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Essential Files
-nav_order: 7
+nav_order: 8
 has_children: false
 permalink: /essential-files
 ---
@@ -112,4 +112,4 @@ You can safely rename ***app.js** and **app.scss** to something more suitable fo
 
         entry: ['./src/static/js/app.js'],
 
-You can create **additional** files without underscores to signify assets you want imported separately from your main entry points. Click here to read more.
+You can create **additional** files without underscores to signify assets you want imported separately from your main entry points. [Click here](/bowman/faq) to read more.

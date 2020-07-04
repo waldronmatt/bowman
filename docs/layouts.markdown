@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Layouts
-nav_order: 5
+nav_order: 6
 ---
 
 # Layouts
