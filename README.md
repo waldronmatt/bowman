@@ -1,8 +1,6 @@
 # Bowman
 
-### A simple static site generator powered by Node.js, Webpack, and Browsersync
-
-<br>
+A simple static site generator powered by Node.js, Webpack, and Browsersync
 
 ## Features
 
