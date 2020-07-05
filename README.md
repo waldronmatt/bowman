@@ -3,7 +3,7 @@
 ### A simple static site generator powered by Node.js, Webpack, and Browsersync
 
 
-# Features
+## Features
 
 - Have your page markup generated automatically
 - Develop quicker with Webpack + Browsersync hot-reloading
