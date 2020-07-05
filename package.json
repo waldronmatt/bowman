@@ -1,12 +1,12 @@
 {
   "name": "@waldronmatt/bowman",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A simple static site generator powered by Node.js, Webpack, and Browsersync",
   "repository": {
     "type": "git",
     "url": "https://github.com/waldronmatt/bowman.git"
   },
-  "homepage": "https://github.com/waldronmatt.github.io/bowman/",
+  "homepage": "https://waldronmatt.github.io/bowman/",
   "main": "src/index.js",
   "bin": {
     "@waldronmatt/create-bowman-starter": "bin/create-bowman-starter",
