@@ -2,6 +2,7 @@
   "name": "@waldronmatt/bowman",
   "version": "1.0.2",
   "description": "A simple static site generator powered by Node.js, Webpack, and Browsersync",
+  "repository": "waldronmatt/bowman",
   "main": "src/index.js",
   "bin": {
     "@waldronmatt/create-bowman-starter": "bin/create-bowman-starter",
@@ -20,7 +21,7 @@
     "webpack",
     "browsersync"
   ],
-  "author": "Matthew Waldron",
+  "author": "Matthew Waldron (http://waldronmatthew.com)",
   "license": "MIT",
   "dependencies": {
     "arg": "^4.1.0",
