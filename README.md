@@ -11,7 +11,7 @@
 
 ## Getting Started
 
-Install:
+Install globally:
 
         npm i -g @waldronmatt/bowman
 
@@ -40,4 +40,4 @@ MIT
 
 ## Credits
 
-- cli by [Dominik Kundel's create-project](https://github.com/dkundel/create-project)
+- CLI authored by Dominik Kundel's [create-project](https://github.com/dkundel/create-project)
