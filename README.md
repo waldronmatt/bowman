@@ -2,6 +2,13 @@
 
 ### A simple static site generator powered by Node.js, Webpack, and Browsersync
 
+
+# Features
+
+- Have your page markup generated automatically
+- Develop quicker with Webpack + Browsersync hot-reloading
+- Assets are compiled and optimized automatically so you're production ready
+
 ## Getting Started
 
 Install:
@@ -25,7 +32,7 @@ Build and serve for production:
         npm run build
 
 ## Documentation
-[Official Bowman Docs](https://waldronmatt.github.io/bowman/)
+[Read the full documentation](https://waldronmatt.github.io/bowman/)
 
 ## License
 
