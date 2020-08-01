@@ -37,10 +37,13 @@ bs.init({
     {
       match: ["src/build/**/**.{ejs,json}"],
       fn:    function (event, file) {
-        const initializePromise = cleanPathBuildMarkup(file);
-        initializePromise.then(function() {
+        async function delayThenBuildMarkup() {
+          // slightly delay watch execution to prevent race condition
+          await new Promise(done => setTimeout(() => done(), 200));
+          cleanPathBuildMarkup(file);
           bs.reload();
-        })
+        }
+        delayThenBuildMarkup();
       }
     },
     // watching for images, other assets
