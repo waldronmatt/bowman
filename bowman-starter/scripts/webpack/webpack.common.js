@@ -31,7 +31,7 @@ module.exports = {
             loader: "css-loader",
             options: {
               importLoaders: 2
-            }
+            },
           },
           {
             loader: 'postcss-loader',
@@ -39,13 +39,13 @@ module.exports = {
               sourceMap: true,
               config: {
                 path: './postcss.config.js'
-              }
-            }
+              },
+            },
           },
           {
             loader: 'sass-loader'
-          }
-        ]
+          },
+        ],
       },
       {
         test: /\.js$/,
@@ -55,9 +55,9 @@ module.exports = {
           options: {
             presets: ['@babel/preset-env'],
             plugins: ['@babel/plugin-transform-runtime']
-          }
-        }
-      }
+          },
+        },
+      },
     ],
   },
   plugins: [
@@ -66,17 +66,17 @@ module.exports = {
       extensions:['scss'] 
     }),
     new ManifestPlugin({
-      fileName: 'assets-manifest.json'
+      fileName: 'static-manifest.json'
     }),
     /* Clean up 'dummy' entries
-    via our webpack prebuild script */
+    from webpack prebuild script */
     new WebpackCleanPlugin(
       ['../../dist/main.js'],
-    )
+    ),
     /*
     */
   ],
   performance : {
     hints : 'warning'
-  }
+  },
 };

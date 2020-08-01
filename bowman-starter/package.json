@@ -7,12 +7,12 @@
     "dev": "run-s webpack-prebuild-dev webpack-dev render-page-dev browsersync",
     "build": "run-s webpack-prebuild-prod webpack-prod render-page-prod",
     "rebuild": "run-s webpack-prebuild-dev render-page-dev",
-    "webpack-prebuild-dev": "webpack --config ./scripts/webpack/webpack.dev.prebuild.js",
-    "webpack-prebuild-prod": "webpack --config  ./scripts/webpack/webpack.prod.prebuild.js",
-    "webpack-dev": "webpack --config ./scripts/webpack/webpack.dev.js",
-    "webpack-prod": "webpack --config ./scripts/webpack/webpack.prod.js",
-    "render-page-dev": "node ./scripts/render.page.dev.js",
-    "render-page-prod": "node ./scripts/render.page.prod.js",
+    "webpack-prebuild-dev": "webpack --config ./scripts/webpack/env/webpack.dev.prebuild.js",
+    "webpack-prebuild-prod": "webpack --config  ./scripts/webpack/env/webpack.prod.prebuild.js",
+    "webpack-dev": "webpack --config ./scripts/webpack/env/webpack.dev.js",
+    "webpack-prod": "webpack --config ./scripts/webpack/env/webpack.prod.js",
+    "render-page-dev": "node ./scripts/render/page.dev.js",
+    "render-page-prod": "node ./scripts/render/page.prod.js",
     "browsersync": "node ./scripts/browsersync"
   },
   "keywords": [

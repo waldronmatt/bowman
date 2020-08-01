@@ -6,9 +6,7 @@ const HardSourceWebpackPlugin = require('hard-source-webpack-plugin');
 
 module.exports = {
   /* We need to specify an entry 
-  so this webpack script can run. */
-  /* We will remove file in the
-  next webpack build step. */
+  so this file can run. */
   entry: ['./src/static/js/app.js'],
   output: {
     filename: '[name].js',
@@ -22,12 +20,13 @@ module.exports = {
       cleanOnceBeforeBuildPatterns: ['static/**/*'],
     }),
     new ManifestPlugin({
-      fileName: 'images-manifest.json',
+      fileName: 'assets-manifest.json',
+      // filter out main.js created in prebuild script
       filter: (file) => {
         return file.name.indexOf('main.js')
       },
       map: (file) => {
-        // Remove hash in manifest key (for images)
+        // Remove hash in manifest key
         // https://github.com/webpack-contrib/copy-webpack-plugin/issues/104
         file.name = file.name.replace(/(\.[a-f0-9]{32})(\..*)$/, '$2');
         return file;
@@ -44,5 +43,5 @@ module.exports = {
   ],
   performance : {
     hints : 'warning'
-  }
+  },
 };

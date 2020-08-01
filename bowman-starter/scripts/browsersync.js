@@ -3,9 +3,9 @@ const exec = require('child_process').exec;
 const webpack = require('webpack');
 const webpackDevMiddleware = require('webpack-dev-middleware');
 const webpackHotMiddleware = require('webpack-hot-middleware');
-const webpackConfig = require('./webpack/webpack.dev');
+const webpackConfig = require('./webpack/env/webpack.dev');
 const bundler = webpack(webpackConfig);
-const cleanPathBuildMarkup = require('./utils/clean-path');
+const cleanBuildMarkup = require('./clean-build-markup');
 
 bs.init({
   server: {
@@ -19,7 +19,7 @@ bs.init({
         stats: { colors: true }
       }),
       webpackHotMiddleware(bundler)
-    ]
+    ],
   },
   injectChanges: false,
   files: [
@@ -31,17 +31,20 @@ bs.init({
           err ? console.log(stderr) : console.log(stdout);
           bs.reload();
         });
-      }
+      },
     },
     // watching for individual page changes
     {
       match: ["src/build/**/**.{ejs,json}"],
       fn:    function (event, file) {
-        const initializePromise = cleanPathBuildMarkup(file);
-        initializePromise.then(function() {
+        async function delayThenBuildMarkup() {
+          // slightly delay watch execution to prevent race condition
+          await new Promise(done => setTimeout(() => done(), 200));
+          cleanBuildMarkup(file);
           bs.reload();
-        })
-      }
+        }
+        delayThenBuildMarkup();
+      },
     },
     // watching for images, other assets
     {
@@ -52,7 +55,7 @@ bs.init({
           err ? console.log(stderr) : console.log(stdout);
           bs.reload();
         });
-      }
+      },
     },
-  ]
+  ],
 });

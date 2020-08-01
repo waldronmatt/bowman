@@ -70,16 +70,14 @@ A basic example:
             "picture": "a-different-folder/pic1"
             }
         ]
-<br>
 
 ### index.json
 
 Bowman uses a manifest file to map images to take advantage of Webpack's contenthash feature that prevents caching.
 
         <% data.pictures.forEach((el) => { %>
-            <img src="<%= site.imagesManifest[`static/images/${el.picture}`] %>">
+            <img src="<%= site.assetsManifest[`static/images/${el.picture}`] %>">
         <% }) %>
-<br>
 
 ### Site Structure:
 

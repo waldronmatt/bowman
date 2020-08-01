@@ -1,6 +1,6 @@
 const glob = require('glob');
-const ps = require('./utils/paths');
-const buildMarkup = require('./buildMarkup');
+const ps = require('../utils/paths');
+const buildMarkup = require('../build-markup');
 
 // set env
 const basePath = '/';

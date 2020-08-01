@@ -1,5 +1,5 @@
 const merge = require('webpack-merge');
-const common = require('./webpack.common.prebuild.js');
+const common = require('../webpack.common.prebuild.js');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = merge(common, {
@@ -9,5 +9,5 @@ module.exports = merge(common, {
       // copy images
       { from:'./src/static/images/', to:'static/images/', }
     ]),
-  ]
+  ],
 });

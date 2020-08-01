@@ -2,8 +2,8 @@ const path = require('path');
 const glob = require('glob');
 const minify = require('@node-minify/core');
 const htmlMinifier = require('@node-minify/html-minifier');
-const buildMarkup = require('./buildMarkup');
-const ps = require('./utils/paths');
+const buildMarkup = require('../build-markup');
+const ps = require('../utils/paths');
 
 // set env
 const basePath = '/';
