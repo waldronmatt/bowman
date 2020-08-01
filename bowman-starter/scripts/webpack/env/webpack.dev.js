@@ -1,6 +1,6 @@
 const webpack = require('webpack');
 const merge = require('webpack-merge');
-const common = require('./webpack.common.js');
+const common = require('../webpack.common.js');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const StylelintPlugin = require('stylelint-webpack-plugin');
 const LiveReloadPlugin = require('webpack-livereload-plugin');
@@ -16,7 +16,7 @@ module.exports = merge(common, {
         options: {
           // eslint options (if necessary)
         },
-      }
+      },
     ],
   },
   plugins: [

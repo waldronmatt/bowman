@@ -1,5 +1,5 @@
 const path = require('path');
-const buildMarkup = require('../buildMarkup');
+const buildMarkup = require('./build-markup');
 
 // set env
 const basePath = '/';
@@ -7,17 +7,17 @@ const basePath = '/';
 const cleanPathBuildMarkup = (file) => {
   const { dir, base } = path.parse(file);
 
-  let getRelativeDir = dir.replace(/(src\/build\/content|src\/build\/data)/g, '')
+  let getRelativeDir = dir.replace(/(src\/build\/content|src\/build\/data)/g, '');
 
   // if json changed, get the corresponding page file
   let baseName = base.replace(/\.json$/g, '.ejs');
-  let newFile = `${getRelativeDir}/${baseName}`
+  let newFile = `${getRelativeDir}/${baseName}`;
 
   if (getRelativeDir === '') {
-    newFile = newFile.replace(/\//g, '')
+    newFile = newFile.replace(/\//g, '');
   }
   if (getRelativeDir[0] === '/') {
-    newFile = `${getRelativeDir.replace(/^\//g, '')}/${baseName}`
+    newFile = `${getRelativeDir.replace(/^\//g, '')}/${baseName}`;
   }
   
   return new Promise(function(resolve, reject) {

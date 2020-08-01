@@ -10,8 +10,8 @@ const frontMatter = require('front-matter');
 const config = require('./utils/config');
 const requireUncached = require('./utils/require-uncached');
 const ps = require('./utils/paths');
+const staticManifest = require('../dist/static-manifest.json');
 const assetsManifest = require('../dist/assets-manifest.json');
-const imagesManifest = require('../dist/images-manifest.json');
 
 const buildMarkup = (file, basePath) => {
   // get full file path
@@ -29,19 +29,19 @@ const buildMarkup = (file, basePath) => {
   }
 
   // get page specific css, js paths
-  const dynamic_css = assetsManifest[`${ps.stylePath}${getFile.name}/${getFile.name}.css`];
-  const dynamic_js = assetsManifest[`${ps.scriptPath}${getFile.name}/${getFile.name}.js`];
+  const dynamic_css = staticManifest[`${ps.stylePath}${getFile.name}/${getFile.name}.css`];
+  const dynamic_js = staticManifest[`${ps.scriptPath}${getFile.name}/${getFile.name}.js`];
 
   // read page file
   const content = fse.readFileSync(`./src/${ps.pagesPath}${file}`, 'utf-8');
-  console.log(`reading ejs page at: src/${ps.pagesPath}${file}`)
+  console.log(`reading ejs page at: src/${ps.pagesPath}${file}`);
 
   // render page
   const pageContent = frontMatter(content);
   const templateConfig = Object.assign({}, 
-    config(basePath, assetsManifest[ps.global_css], assetsManifest[ps.global_js], ps.alias_ejs, data, dynamic_css, dynamic_js, imagesManifest), {
+    config(basePath, staticManifest[ps.global_css], staticManifest[ps.global_js], ps.alias_ejs, data, dynamic_css, dynamic_js, assetsManifest), {
       page: pageContent.attributes
-    }
+    },
   );
 
   // generate page content
@@ -68,8 +68,8 @@ const buildMarkup = (file, basePath) => {
       templateData,
       Object.assign({}, templateConfig, {
         body: generatePage,
-        filename: templateFileName
-      })
+        filename: templateFileName,
+      }),
     );
   }
   catch (e) {
