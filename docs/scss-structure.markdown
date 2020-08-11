@@ -21,4 +21,6 @@ Bowman's default scss structure is based on Hugo Giraudel's SCSS 7-1 architectur
                     vendors/
                     app.scss
 
-**app.scss** - css entrypoint for your site.
+**app.scss** - css entrypoint for your site
+
+**critical.scss** - critical css to be inlined for improved page load performance

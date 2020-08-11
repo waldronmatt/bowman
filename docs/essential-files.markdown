@@ -69,10 +69,16 @@ site.json supplies metadata shared by pages in your project. Edit scripts/utils/
         </html>
 
 <br>
-default.ejs is the fallback page template option for Bowman's HTML markup generator. You can change the default behavior by editing scripts/buildMarkup.js:
+default.ejs is the fallback page template option for Bowman's HTML markup generator. You can change the default behavior by editing scripts/build-markup.js:
 
     // render template
     const template = pageContent.attributes.template || 'default';
+
+## ignore.js
+
+Bowman uses a webpack prebuild script to generate a manifest file containing site assets before static assets are compiled in the main webpack configuration. This is useful for situation where you want to reference the manifest file in your js scripts.
+
+Because webpack mandates an entrypoint, a placeholder file (ignore.js) is used in the webpack prebuild script. More information can be found in ignore.js.
 
 ## app.js, app.scss
 
@@ -107,9 +113,5 @@ app.scss
 
 <br>
 You can safely rename ***app.js** and **app.scss** to something more suitable for your project, however, it is not recommended removing these files entirely.
-
-***Note**: Update scripts/webpack/webpack.common.prebuild.js
-
-        entry: ['./src/static/js/app.js'],
 
 You can create **additional** files without underscores to signify assets you want imported separately from your main entry points. [Click here](/bowman/faq) to read more.

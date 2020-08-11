@@ -18,14 +18,14 @@ permalink: /site-structure/js-structure
                     vendors/
                     app.js
 
-**components** - component-specific scripts.
+**components** - component-specific scripts
 
-**helpers** - general-purpose scripts not tied to a particular component.
+**layouts** - scripts specific to the main parts of your site (head, header, navigation, footer)
 
-**layouts** - scripts specific to the main parts of your site (head, header, navigation, footer).
+**pages** - scripts specific to a particular page
 
-**pages** - scripts specific to a particular page.
+**vendors** - external scripts
 
-**vendors** - external scripts.
+**app.js** - js entrypoint for your site
 
-**app.scss** - js entrypoint for your site.
+**_load-apps.js** - code splitting/dynamic imports for your js scripts
