@@ -1,15 +1,20 @@
 <!DOCTYPE html>
+
 <html lang="en-US">
   <head>
     <%- include('../layouts/head') %>
-    <%- include('../layouts/dynamic-css') %>
   </head>
+
   <body>
     <%- include('../layouts/header') %>
 
     <%- body %>
 
-    <%- include('../layouts/footer') %>
-    <%- include('../layouts/dynamic-js') %>
+    <footer>
+      <%- include('../layouts/footer') %>
+    </footer>
+
+    <%- include('../layouts/foot') %>
+    <%- include('../layouts/page-assets') %>
   </body>
 </html>

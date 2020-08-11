@@ -6,4 +6,22 @@
 
 <base href="<%= site.basePath %>">
 <link rel="icon" type="image/png" href="<%= site.basePath %>favicon.png">
-<link rel="stylesheet" href="<%= site.basePath %><%= site.global_css %>">
+
+<!--
+  inject minified critical css
+  https://jonassebastianohlsson.com/criticalpathcssgenerator/#what-is
+-->
+
+<!-- 
+  comment out ejs variable inside style tags
+  this is so we can prevent stylelint errors
+-->
+
+
+<!-- <style>/* <%= site.criticalStyles %> */</style> -->
+
+
+<!-- 
+  recommended to leave line commented above
+  for development builds
+-->

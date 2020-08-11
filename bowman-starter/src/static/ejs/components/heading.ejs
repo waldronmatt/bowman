@@ -1,4 +1,8 @@
-<h1><%= data.info.header %></h1>
+<%= if (data.info.header === Bowman) { %>
+  <h1 data-load="index"><%= data.info.header %></h1>
+<%= } else { %>
+  <h1><%= data.info.header %></h1>
+<%= } %>
 
 <div class="container">
   <p><strong><%= sharedData.heading.title %></strong></p>

@@ -1,18 +1,11 @@
-// Helpers
+/* Components */
 
-// Vendors
-
-/*
-Vendor files can either be imported here or called seperately.
-*/
-
-// Page specific scripts
-
-/*
-These files are called seperately to avoid merging into the main script file.
-*/
-
-// Components
-
-// Layouts
+/* Layouts */
 import './layouts/_footer';
+
+/* Vendors */
+
+/* Page specific scripts */
+
+/* Dynamic imports */
+import './_load-apps';

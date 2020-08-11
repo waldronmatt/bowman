@@ -1,0 +1,9 @@
+<!--
+  move full css file from 'head' to 'before closing body tag'
+  because we are utilizing critical css
+  https://jonassebastianohlsson.com/criticalpathcssgenerator/#what-is
+-->
+
+<link rel="stylesheet" href="<%= site.basePath %><%= site.global_css %>">
+
+<script src="<%= site.basePath %><%= site.global_js %>"></script>
