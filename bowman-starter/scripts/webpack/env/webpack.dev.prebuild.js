@@ -6,8 +6,7 @@ module.exports = merge(common, {
   mode: 'development',
   plugins: [
     new CopyWebpackPlugin([
-      // copy images
-      { from:'./src/static/images/', to:'static/images/', }
+      { from:'./src/static/images/', to:'static/images/', },
     ]),
   ],
 });

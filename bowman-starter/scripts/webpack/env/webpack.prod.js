@@ -5,12 +5,14 @@ const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = merge(common, {
-  output: {
-    filename: '[name].[contenthash].js'
-  },
   mode: 'production',
+  output: {
+    filename: '[name].[contenthash].js',
+    // code splitting/dynamic imports
+    chunkFilename: 'static/js/[name].[contenthash].js',
+  },
   plugins: [
-    // Where the compiled SASS is saved to
+    // Where the compiled scss is saved to
     new MiniCssExtractPlugin({
       filename: '[name].[contenthash].css',
       allChunks: true,
@@ -21,9 +23,11 @@ module.exports = merge(common, {
     minimizer: [
       new OptimizeCSSAssetsPlugin({
         cssProcessorOptions: {
-          safe: true
+          safe: true,
         },
       }),
+    ],
+    minimizer: [
       new TerserPlugin(),
     ],
   },

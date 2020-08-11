@@ -21,7 +21,6 @@ bs.init({
       webpackHotMiddleware(bundler)
     ],
   },
-  injectChanges: false,
   files: [
     // watching for changes to component/layout markup/data
     {
@@ -37,13 +36,30 @@ bs.init({
     {
       match: ["src/build/**/**.{ejs,json}"],
       fn:    function (event, file) {
-        async function delayThenBuildMarkup() {
+        const delayExecution = () => {
           // slightly delay watch execution to prevent race condition
-          await new Promise(done => setTimeout(() => done(), 200));
-          cleanBuildMarkup(file);
-          bs.reload();
+          return new Promise((resolve) => { resolve(done => setTimeout(() => done(), 100)) });
+        };
+
+        const updatePage = () => {
+          return new Promise((resolve) => { resolve(cleanBuildMarkup(file)) });
+        };
+
+        const pageReload = () => {
+          return new Promise((resolve) => { resolve(bs.reload()) });
+        };
+      
+        const triggerPageChanges = async () => {
+          try {
+            console.log(`page ${event} initiated`);
+            await delayExecution();
+            await updatePage();
+            await pageReload();
+          } catch (error) {
+            throw Error(`Unable to trigger page ${event}.`);
+          }
         }
-        delayThenBuildMarkup();
+        triggerPageChanges().catch(error => console.error(error));
       },
     },
     // watching for images, other assets

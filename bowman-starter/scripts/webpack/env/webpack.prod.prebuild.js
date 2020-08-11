@@ -7,8 +7,7 @@ module.exports = merge(common, {
   mode: 'production',
   plugins: [
     new CopyWebpackPlugin([
-      // copy images
-      { from:'src/static/images/', to:'static/images/[path][name].[contenthash].[ext]', }
+      { from:'src/static/images/', to:'static/images/[path][name].[contenthash].[ext]', },
     ]),
     new ImageminPlugin({ test: /\.(jpe?g|png|gif|svg)$/i }),
   ],

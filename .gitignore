@@ -38,7 +38,8 @@ build/Release
 
 # Dependency directories
 node_modules/
-jspm_packages/
+bowman-starter/node_modules/
+bowman-starter/package-lock.json
 
 # TypeScript v1 declaration files
 typings/
