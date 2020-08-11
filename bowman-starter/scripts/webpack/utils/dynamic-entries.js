@@ -1,8 +1,9 @@
+// https://stackoverflow.com/questions/54144125/creating-dynamically-named-outputs-for-wildcarded-entry-files
+
 const glob = require("glob");
 
-// https://stackoverflow.com/questions/54144125/creating-dynamically-named-outputs-for-wildcarded-entry-files
 const entry = glob.sync('./src/**/[^_]*.{scss,js}').reduce((entry, path) => {
-  // remove `./src/`, `.scss, .js`
+  // remove `./src/, .scss, .js`
   const pathName = path.replace(/(\.\/src\/|\.scss$|\.js$)/g, '')
     // rename folder to css for consistency in dist output
     .replace(/(\/scss\/)/g, '/css/');

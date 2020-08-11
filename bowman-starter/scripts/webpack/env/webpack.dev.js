@@ -7,6 +7,11 @@ const LiveReloadPlugin = require('webpack-livereload-plugin');
 
 module.exports = merge(common, {
   mode: 'development',
+  output: {
+    filename: '[name].js',
+    // code splitting/dynamic imports
+    chunkFilename: 'static/js/[name].js',
+  },
   module: {
     rules: [
       {
@@ -22,12 +27,12 @@ module.exports = merge(common, {
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new LiveReloadPlugin({
-      appendScriptTag: true
+      appendScriptTag: true,
     }),
     new StylelintPlugin({
       files: 'src/static/scss/**/*.scss',
     }),
-    // Where the compiled SASS is saved to
+    // Where the compiled scss is saved to
     new MiniCssExtractPlugin({
       filename: '[name].css',
       allChunks: true,

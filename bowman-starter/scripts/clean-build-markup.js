@@ -1,3 +1,8 @@
+/*
+  Executing page build
+  when watching for page changes
+*/
+
 const path = require('path');
 const buildMarkup = require('./build-markup');
 
@@ -19,11 +24,24 @@ const cleanPathBuildMarkup = (file) => {
   if (getRelativeDir[0] === '/') {
     newFile = `${getRelativeDir.replace(/^\//g, '')}/${baseName}`;
   }
-  
-  return new Promise(function(resolve, reject) {
-    resolve(buildMarkup(newFile, basePath));
-    reject(`Unable to process ${newFile}`);
-  })
+
+  const updatePage = (newFile, basePath) => {
+    return new Promise((resolve, reject) => {
+      console.time(`page ${newFile} generated in`);
+      resolve(buildMarkup(newFile, basePath));
+      reject(`unable to process ${newFile}`);
+    });
+  };
+
+  const returnPageUpdates = async () => {
+    try {
+      await updatePage(newFile, basePath);
+      console.timeEnd(`page ${newFile} generated in`);
+    } catch (error) {
+      throw Error(error);
+    }
+  }
+  returnPageUpdates().catch(error => console.error(error));
 }
 
 module.exports = cleanPathBuildMarkup;
