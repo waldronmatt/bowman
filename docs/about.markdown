@@ -14,13 +14,15 @@ Bowman is a simple static generator. That's it!
 
 ## Why use Bowman?
 
-Spend more time developing and less time configuring with Bowman's Webpack and Browserync integration.
+Bowman's markup generator and custom build configurations work together to streamline your workflow.
 
-The benefits:
+Features:
 
- - Have your page markup generated automatically
- - Develop quicker with Webpack + Browsersync hot-reloading
- - Assets are compiled and optimized automatically so you're production ready
+ - Recursive page markup generation 
+ - Dynamic entry point aggregation
+ - Hot reloading of assets and pages
+ - Code splitting integration
+ - Asset transformation, optimization, and caching
 
 ## Who is Bowman for?
 

@@ -15,8 +15,8 @@ permalink: /site-structure/json-structure
                     layouts/
                     site.json
 
-**components** - data specific to components.
+**components** - data specific to components
 
-**layouts** - data specific to site layouts.
+**layouts** - data specific to site layouts (head, header, navigation, footer)
 
-**site.json** - data shared across the entire site (title, description, keywords, etc).
+**site.json** - data shared across the entire site (title, description, keywords, etc)

@@ -17,15 +17,15 @@ permalink: /site-structure/ejs-structure
                     partials/
                     templates/
 
-**components** - markup that can be reused on your site.
+**components** - markup that can be reused on your site
 
-**layouts** - shared html markup for the main parts of your site (head, header, navigation, footer).
+**layouts** - shared html markup for the main parts of your site (head, header, navigation, footer)
 
-**pages** - markup specific to a particular page.
+**pages** - markup specific to a particular page
 
 **partials** - group related components together via multiple ejs includes. Useful for blog posts, articles, etc.
 
-**templates** - ejs calls to the main parts of your site (head, header, navigation, footer).
+**templates** - ejs calls to the main parts of your site (head, header, navigation, footer)
 
             
             

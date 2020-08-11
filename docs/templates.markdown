@@ -30,18 +30,24 @@ index.ejs
 <br>
 default.ejs
 
-        <!DOCTYPE html>
+<!DOCTYPE html>
+
         <html lang="en-US">
-            <head>
-                <%- include('../layouts/head') %>
-            </head>
-            <body>
-                <%- include('../layouts/header') %>
+        <head>
+            <%- include('../layouts/head') %>
+        </head>
 
-                <%- body %>
+        <body>
+            <%- include('../layouts/header') %>
 
+            <%- body %>
+
+            <footer>
                 <%- include('../layouts/footer') %>
-            </body>
+            </footer>
+
+            <%- include('../layouts/foot') %>
+        </body>
         </html>
 
 <br>

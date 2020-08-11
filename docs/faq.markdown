@@ -32,7 +32,9 @@ permalink: /faq
                     app.scss
         .eslintignore
         .eslintrc
+        .stylelintignore
         .stylelintrc.json
+        ignore.js
         postcss.config.js
         package.json
         package-lock.json
@@ -61,13 +63,13 @@ A basic example:
 
         "pictures": [
             {
-            "picture": "some-folder/pic1"
+                "picture": "some-folder/pic1"
             }, 
             {
-            "picture": "some-folder/pic2"
+                "picture": "some-folder/pic2"
             },
             {
-            "picture": "a-different-folder/pic1"
+                "picture": "a-different-folder/pic1"
             }
         ]
 

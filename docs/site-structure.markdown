@@ -12,7 +12,6 @@ permalink: /site-structure/
             dist/
             scripts/
             src/
-            package.json
 
 
 ## src/
