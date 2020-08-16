@@ -12,11 +12,11 @@ permalink: /site-structure/js-structure
             static/
                 ejs/
                     components/
-                    helpers/
                     layouts
                     pages/
                     vendors/
                     app.js
+                    _load-apps.js
 
 **components** - component-specific scripts
 

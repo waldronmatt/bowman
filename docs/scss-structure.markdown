@@ -20,6 +20,7 @@ Bowman's default scss structure is based on Hugo Giraudel's SCSS 7-1 architectur
                     pages/
                     vendors/
                     app.scss
+                    critical.scss
 
 **app.scss** - css entrypoint for your site
 
