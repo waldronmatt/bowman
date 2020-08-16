@@ -6,7 +6,7 @@
     "type": "git",
     "url": "https://github.com/waldronmatt/bowman.git"
   },
-  "homepage": "https://waldronmatt.github.io/bowman/",
+  "homepage": "https://bowman.netlify.app",
   "main": "src/index.js",
   "bin": {
     "@waldronmatt/create-bowman-starter": "bin/create-bowman-starter",
