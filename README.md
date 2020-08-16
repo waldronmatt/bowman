@@ -1,14 +1,21 @@
 # Bowman
 
-A simple static site generator powered by Node.js, Webpack, and Browsersync
+A simple static site generator with an integrated toolchain for efficient development and delivery.
+
+![](bowman.gif)
+
+## Introduction
+
+Bowman is a simple static site generator powered by Node.js, Webpack, and Browsersync. Bowman comes with pre-configured scripts to bundle assets, generate markup, and hot-reload pages. Pages are generated using the J.E.N. technology core (JSON - data, EJS - templating, Node.js - markup generation).
 
 ## Features
 
-- Have your page markup generated automatically
-- Develop quicker with Webpack + Browsersync hot-reloading
-- Assets are compiled and optimized automatically so you're production ready
+- Recursively generates page markup
+- Recursively finds and outputs entry points
+- Hot reloading of pages and assets
+- Asset bundling, cache prevention, and code splitting support
 
-## Getting Started
+## Installation
 
 Install globally:
 
@@ -22,6 +29,8 @@ Install dependencies:
 
         npm install
 
+## Getting Started
+
 Run dev environment:
 
         npm run dev
@@ -30,8 +39,44 @@ Build and serve for production:
 
         npm run build
 
+## Useage
+
+### Create the markup
+
+        build/
+            content/
+                my-page.ejs
+
+my-page.ejs
+
+        <h1><%= data.info.header %></h1>
+
+        <div class="container">
+            <p><%= data.info.description %></p>
+        </div>
+
+### Create the data
+
+        build/
+            data/
+                my-page.json
+
+my-page.json
+
+        {
+            "title": "My Page",
+            "info": {
+                "header": "Hello World!",
+                "description": "This is my cool new page."
+            }
+        }
+
 ## Documentation
 [Read the full documentation](https://waldronmatt.github.io/bowman/)
+
+## Contributing
+
+Pull requests are welcome! For major changes, please open an issue first to discuss what you would like to change.
 
 ## License
 
