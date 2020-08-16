@@ -8,27 +8,26 @@ permalink: /about
 
 # About
 
-## What is Bowman?
+## Introduction
 
-Bowman is a simple static generator. That's it!
+Bowman is a simple static site generator powered by Node.js, Webpack, and Browsersync. Bowman comes with pre-configured scripts to bundle assets, generate markup, and hot-reload pages. Pages are generated using the J.E.N. technology core (JSON - data, EJS - templating, Node.js - markup generation).
 
 ## Why use Bowman?
 
-Bowman's markup generator and custom build configurations work together to streamline your workflow.
+Why use Bowman when there are a lot of other options to choose from?
 
-Features:
+With Bowman, you can focus on creating your website without worrying about your build process. Bowman handles all the work to recursively find, build, and hot reload page/asset changes.
 
- - Recursive page markup generation 
- - Dynamic entry point aggregation
- - Hot reloading of assets and pages
- - Code splitting integration
- - Asset transformation, optimization, and caching
+In contrast with other larger static site generators, Bowman makes a lot of decisions on your behalf to make things easy, but don't worry! You can easily customize and integrate your own build and server configurations using Webpack and Browserysnc. 
 
 ## Who is Bowman for?
 
-Bowman is great for small to medium sized static websites and personal projects. 
+Bowman is a great option for people looking for the following features in a static site generator: 
 
-Those looking for more options and greater templating support may want to consider Eleventy.
+- A simple-to-use **JavaScript-based** static site generator 
+- Uses technologies with **JavaScript-like syntax** to build pages **(J.E.N.)** 
+- Has a **complete toolchain** using industry software **(Webpack/Browsersync)**
 
-Other popular choices include Hugo and Gatsby.
+Bowman is a great solution for small to medium-sized sites and applications.
 
+Those looking for a similar JavaScript static site generator with more options and greater templating support may want to consider Eleventy.

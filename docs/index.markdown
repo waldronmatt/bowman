@@ -6,9 +6,16 @@ nav_order: 1
 
 # Bowman
 
-### A simple static site generator powered by Node.js, Webpack, and Browsersync
+### A simple static site generator with an integrated toolchain for efficient development and delivery.
 
-## Getting Started
+## Features
+
+- Recursively generates page markup
+- Recursively finds and outputs entry points
+- Hot reloading of pages and assets
+- Asset bundling, cache prevention, and code splitting support
+
+## Installation
 
 Install:
 
@@ -21,6 +28,8 @@ Create project:
 Install dependencies:
 
         npm install
+
+## Getting Started
 
 Run dev environment:
 
