@@ -1,6 +1,8 @@
 # Bowman
 
-A simple static site generator with an integrated toolchain for efficient development and delivery.
+[![Netlify Status](https://api.netlify.com/api/v1/badges/981f8252-c7bd-4215-8b05-60aee8402a2d/deploy-status)](https://app.netlify.com/sites/bowman/deploys)
+
+A simple static site generator with an integrated toolchain for efficient development and delivery. [Click here to see it live on Netlify](https://bowman.netlify.app).
 
 ![](bowman.gif)
 
