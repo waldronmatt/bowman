@@ -1,6 +1,6 @@
 # Bowman
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/981f8252-c7bd-4215-8b05-60aee8402a2d/deploy-status)](https://app.netlify.com/sites/bowman/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/981f8252-c7bd-4215-8b05-60aee8402a2d/deploy-status)](https://app.netlify.com/sites/bowman/deploys)![npm](https://img.shields.io/npm/v/@waldronmatt/bowman)![node-current](https://img.shields.io/node/v/@waldronmatt/bowman)(https://img.shields.io/badge/webpack-4.43.0-blue)
 
 A simple static site generator with an integrated toolchain for efficient development and delivery. [Click here to see it live on Netlify](https://bowman.netlify.app).
 

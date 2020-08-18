@@ -45,5 +45,8 @@
     "bin/",
     "src/",
     "bowman-starter/"
-  ]
+  ],
+  "engines": {
+    "node": ">=10.21.0"
+  }
 }
