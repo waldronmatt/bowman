@@ -41,12 +41,12 @@
     "pkg-install": "^0.2.0",
     "spdx-license-list": "^5.0.0"
   },
+  "engines": {
+    "node": ">=10.21.0"
+  },
   "files": [
     "bin/",
     "src/",
     "bowman-starter/"
-  ],
-  "engines": {
-    "node": ">=10.21.0"
-  }
+  ]
 }
