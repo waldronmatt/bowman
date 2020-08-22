@@ -38,7 +38,7 @@ bs.init({
       fn:    function (event, file) {
         const delayExecution = () => {
           // slightly delay watch execution to prevent race condition
-          return new Promise((resolve) => { resolve(done => setTimeout(() => done(), 100)) });
+          return new Promise((resolve) => { resolve(done => setTimeout(() => done(), 1000)) });
         };
 
         const updatePage = () => {

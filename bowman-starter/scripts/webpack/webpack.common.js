@@ -3,7 +3,6 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const FixStyleOnlyEntriesPlugin = require("webpack-fix-style-only-entries");
 const ManifestPlugin = require('webpack-manifest-plugin');
 const WebpackCleanPlugin = require('webpack-clean');
-const HardSourceWebpackPlugin = require('hard-source-webpack-plugin');
 const entry = require('./utils/dynamic-entries');
 
 module.exports = {
@@ -61,7 +60,6 @@ module.exports = {
     ],
   },
   plugins: [
-    new HardSourceWebpackPlugin(),
     new FixStyleOnlyEntriesPlugin({ 
       extensions:['scss'],
     }),
