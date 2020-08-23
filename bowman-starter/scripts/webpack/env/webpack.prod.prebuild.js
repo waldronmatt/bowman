@@ -9,6 +9,7 @@ module.exports = merge(common, {
     new CopyWebpackPlugin([
       { from:'src/static/images/', to:'static/images/[path][name].[contenthash].[ext]', },
     ]),
+    // compress images (might take a while if there's a lot)
     new ImageminPlugin({ test: /\.(jpe?g|png|gif|svg)$/i }),
   ],
 });

@@ -8,25 +8,22 @@ module.exports = merge(common, {
   mode: 'production',
   output: {
     filename: '[name].[contenthash].js',
-    // code splitting/dynamic imports
+    // specify chunck path for code splitted files
     chunkFilename: 'static/js/[name].[contenthash].js',
   },
   plugins: [
-    // Where the compiled scss is saved to
+    // where the compiled scss is saved to
     new MiniCssExtractPlugin({
       filename: '[name].[contenthash].css',
-      allChunks: true,
     }),
   ],
   optimization: {
     minimize: true,
     minimizer: [
+      // minimize js
       new TerserPlugin(),
-      new OptimizeCSSAssetsPlugin({
-        cssProcessorOptions: {
-          safe: true,
-        },
-      }),
+      // minimize css
+      new OptimizeCSSAssetsPlugin(),
     ],
   },
 });

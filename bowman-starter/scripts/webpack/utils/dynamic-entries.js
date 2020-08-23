@@ -9,7 +9,7 @@ const entry = glob.sync('./src/**/[^_]*.{scss,js}').reduce((entry, path) => {
     .replace(/(\/scss\/)/g, '/css/');
   entry[pathName] = path;
 
-  // Browsersync hot module replacement with Webpack
+  // browsersync hot module replacement with Webpack
   entry['webpack/hot/dev-server'];
   entry['webpack-hot-middleware/client'];
   return entry;

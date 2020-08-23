@@ -8,13 +8,23 @@ const HardSourceWebpackPlugin = require('hard-source-webpack-plugin');
 
 module.exports = merge(common, {
   mode: 'development',
+  /* 
+    Map your compiled code back to your original source code.
+
+    For example, if you bundle three source files (a.js, b.js, and c.js) 
+    into one bundle (bundle.js) and one of the source files contains an error, 
+    the stack trace will simply point to bundle.js. 
+    If an error originates from b.js, the source map will tell you exactly that.
+  */
+  devtool: 'inline-source-map',
   output: {
     filename: '[name].js',
-    // code splitting/dynamic imports
+    // specify chunck path for code splitted files
     chunkFilename: 'static/js/[name].js',
   },
   module: {
     rules: [
+      // linting js files before babel transpiling
       {
         enforce: 'pre',
         test: /\.js$/,
@@ -24,20 +34,33 @@ module.exports = merge(common, {
     ],
   },
   plugins: [
+    /*
+      Provides an intermediate caching step for modules
+
+      Not using on prod builds because Netlify stalls out a while
+    */
     new HardSourceWebpackPlugin(),
     new webpack.HotModuleReplacementPlugin(),
+    /* 
+      Hot reload support for static assets (css, js)
+      
+      We're using webpack-livereload instead of webpack-dev-server because
+      we want assets served by browsersync server, but still want reloads 
+      triggered from webpack's build pipeline.
+    */
     new LiveReloadPlugin({
       appendScriptTag: true,
     }),
+    // linting the sass files
     new StylelintPlugin({
       files: 'src/static/scss/**/*.scss',
     }),
-    // Where the compiled scss is saved to
+    // where the compiled scss is saved to
     new MiniCssExtractPlugin({
       filename: '[name].css',
-      allChunks: true,
     }),
   ],
+  // don't minimize so we can debug
   optimization: {
     minimize: false,
   },

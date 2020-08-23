@@ -1,10 +1,7 @@
-/*
-  Executing page build
-  when watching for page changes
-*/
-
 const path = require('path');
 const buildMarkup = require('./build-markup');
+
+// executing page build when watching for page changes
 
 // set env
 const basePath = '/';
@@ -28,6 +25,7 @@ const cleanPathBuildMarkup = (file) => {
   const updatePage = (newFile, basePath) => {
     return new Promise((resolve, reject) => {
       console.time(`page ${newFile} generated in`);
+
       resolve(buildMarkup(newFile, basePath));
       reject(`unable to process ${newFile}`);
     });

@@ -2,26 +2,23 @@
   "title": "Hello World!",
   "info": {
     "header": "Bowman",
-    "description": "A simple static site generator powered by Node.js, Webpack, and Browsersync",
+    "description": "A simple static site generator with an integrated toolchain for efficient development and delivery.",
     "link": {
       "text": "Click here to read the documentation.",
       "href": "https://waldronmatt.github.io/bowman/"
     },
     "features": [
       {
-        "list": "Keep things DRY: Build pages with reusable ejs components."
+        "list": "Recursively generates page markup"
       },
       {
-        "list": "Separation of concerns: Use json files to store page data and inject into your ejs components."
+        "list": "Recursively finds and outputs entry points"
       },
       {
-        "list": "Use familiar languages and linters: ES6+ JavaScript, Sass, eslint, stylelint"
+        "list": "Hot reloading of pages and assets"
       },
       {
-        "list": "Develop faster: Bowman's 'smart watch' integration with Browsersync allows for quick and efficient hot-reloading."
-      },
-      {
-        "list": "Be production-ready: Bowman's customized webpack configurations and markup generator optimizes assets and outputs HTML."
+        "list": "Asset bundling, cache prevention, and code splitting support"
       }
     ]
   }
