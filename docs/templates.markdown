@@ -30,8 +30,7 @@ index.ejs
 <br>
 default.ejs
 
-<!DOCTYPE html>
-
+        <!DOCTYPE html>
         <html lang="en-US">
         <head>
             <%- include('../layouts/head') %>
