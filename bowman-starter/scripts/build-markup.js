@@ -78,7 +78,7 @@ const buildMarkup = (file, basePath) => {
     fse.writeFileSync(`${destPath}/${getFile.name}.html`, completePage);
     console.log(`writing rendered html markup to: ${destPath}/${getFile.name}.html`);
   } catch (error) {
-    throw Error('uable to write rendered html markup');
+    throw Error('unable to write rendered html markup');
   }
 }
 
