@@ -5,13 +5,16 @@ const webpackDevMiddleware = require('webpack-dev-middleware');
 const webpackHotMiddleware = require('webpack-hot-middleware');
 const webpackConfig = require('./webpack/env/webpack.dev');
 const bundler = webpack(webpackConfig);
+const { debounce } = require('./utils/debounce')
 const cleanBuildMarkup = require('./clean-build-markup');
 
 bs.init({
   server: {
-    // Browsersync hot module replacement with Webpack
-    // https://jsramblings.com/hot-reloading-gulp-webpack-browsersync/
-    // https://github.com/BrowserSync/recipes/tree/master/recipes/webpack.react-hot-loader
+    /*
+      Browsersync hot module replacement with Webpack
+      https://jsramblings.com/hot-reloading-gulp-webpack-browsersync/
+      https://github.com/BrowserSync/recipes/tree/master/recipes/webpack.react-hot-loader
+    */
     baseDir: ['dist/'],
     middleware: [
       webpackDevMiddleware(bundler, {
@@ -25,7 +28,7 @@ bs.init({
     // watching for changes to component/layout markup/data
     {
       match: ["src/static/**/**.{ejs,json}"],
-      fn:    function () {
+      fn: function () {
         exec("npm run render-page-dev", function(err, stdout, stderr) {
           err ? console.log(stderr) : console.log(stdout);
           bs.reload();
@@ -35,11 +38,8 @@ bs.init({
     // watching for individual page changes
     {
       match: ["src/build/**/**.{ejs,json}"],
-      fn:    function (event, file) {
-        const delayExecution = () => {
-          // slightly delay watch execution to prevent race condition
-          return new Promise((resolve) => { resolve(done => setTimeout(() => done(), 100)) });
-        };
+      // limit event firing rate so page update script doesn't terminate unexpectedly
+      fn: debounce(function (event, file) {
 
         const updatePage = () => {
           return new Promise((resolve) => { resolve(cleanBuildMarkup(file)) });
@@ -52,7 +52,6 @@ bs.init({
         const triggerPageChanges = async () => {
           try {
             console.log(`page ${event} initiated`);
-            await delayExecution();
             await updatePage();
             await pageReload();
           } catch (error) {
@@ -60,12 +59,13 @@ bs.init({
           }
         }
         triggerPageChanges().catch(error => console.error(error));
-      },
+
+      }, 100),
     },
     // watching for images, other assets
     {
       match: ["src/static/**/**.{jpg,jpeg,png,gif,svg,pdf,ttf}"],
-      fn:    function () {
+      fn: function () {
         // this npm script will re-compile image manifest and rebuild pages
         exec("npm run rebuild", function(err, stdout, stderr) {
           err ? console.log(stderr) : console.log(stdout);

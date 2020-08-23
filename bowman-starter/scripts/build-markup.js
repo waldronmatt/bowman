@@ -13,11 +13,11 @@ const ps = require('./utils/paths');
 const staticManifest = require('../dist/static-manifest.json');
 
 const buildMarkup = (file, basePath) => {
-  // get page data
   const getFile = path.parse(file);
   const getExtentionJSON = file.replace(/\.ejs$/g, '.json');
-  let data;
 
+  // get page data
+  let data;
   try { 
     data = requireUncached(`../../src/${ps.dataPath}${getExtentionJSON}`);
     console.log(`getting json data at: src/${ps.dataPath}${getExtentionJSON}`);
