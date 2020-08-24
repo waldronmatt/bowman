@@ -38,6 +38,7 @@ build/Release
 
 # Dependency directories
 node_modules/
+package-lock.json
 bowman-starter/node_modules/
 bowman-starter/package-lock.json
 
