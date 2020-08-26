@@ -21,9 +21,22 @@ module.exports = merge(common, {
     minimize: true,
     minimizer: [
       // minimize js
-      new TerserPlugin(),
+      new TerserPlugin({
+        // https://github.com/webpack-contrib/terser-webpack-plugin/#remove-comments
+        terserOptions: {
+          output: {
+            comments: false,
+          },
+        },
+        extractComments: false,
+      }),
       // minimize css
-      new OptimizeCSSAssetsPlugin(),
+      new OptimizeCSSAssetsPlugin({
+        // remove comments
+        cssProcessorPluginOptions: {
+          preset: ['default', { discardComments: { removeAll: true } }],
+        },
+      }),
     ],
   },
 });
