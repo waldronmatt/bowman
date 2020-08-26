@@ -4,6 +4,6 @@
   https://jonassebastianohlsson.com/criticalpathcssgenerator/#what-is
 -->
 
-<link rel="stylesheet" href="<%= site.basePath %><%= site.global_css %>">
+<link rel="stylesheet" rel="preload" href="<%= site.basePath %><%= site.global_css %>" as="style">
 
-<script src="<%= site.basePath %><%= site.global_js %>"></script>
+<script src="<%= site.basePath %><%= site.global_js %>" async></script>

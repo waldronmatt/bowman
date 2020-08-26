@@ -16,6 +16,12 @@ html {
 }
 
 body {
+  /*
+    Fallback font, overriden by font-face
+    So we don't have invisible text on webfont load
+  */
+  font-family: "Palatino", serif;
+
   @include md {
     margin: 2em;
   }
