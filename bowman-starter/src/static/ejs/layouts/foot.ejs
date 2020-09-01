@@ -1,9 +1,36 @@
 <!--
-  move full css file from 'head' to 'before closing body tag'
-  because we are utilizing critical css
-  https://jonassebastianohlsson.com/criticalpathcssgenerator/#what-is
+  Inline js that is critical to
+  initial page rendering for optimal performance
+
+  Insert using script tag before the body closing tag. 
+  That way we make sure that JavaScript doesn't block content render and 
+  all available DOM nodes are created and available to JavaScript code.
+  https://dev.to/prototyp/improving-website-performance-by-eliminating-render-blocking-css-and-javascript-28ei
 -->
 
-<link rel="stylesheet" rel="preload" href="<%= site.basePath %><%= site.global_css %>" as="style">
+<!-- 
+  fallback for browsers not supporting 'preload' css
+  https://dev.to/prototyp/improving-website-performance-by-eliminating-render-blocking-css-and-javascript-28ei
+  https://bugzilla.mozilla.org/show_bug.cgi?id=1405761
+-->
+<script>
+  var isIE = !!window.MSInputMethodContext && !!document.documentMode;
+  var isFirefox = navigator.userAgent.toLowerCase().indexOf("firefox") > -1;
 
-<script src="<%= site.basePath %><%= site.global_js %>" async></script>
+  if (isIE || isFirefox) {
+    var pageStylesheet = document.createElement("link");
+    pageStylesheet.rel = "stylesheet";
+    pageStylesheet.type = "text/css";
+    pageStylesheet.href = "<%= site.basePath %><%= site.global_css %>";
+    document.head.appendChild(pageStylesheet);
+  }
+</script>
+
+<!--
+  Defer - for scripts needing the whole DOM and/or relative execution order is important. 
+  It tells the browser to load the page first, then load the script in the background.
+
+  Async - for independent scripts that can be executed in any order. 
+  This script doesn't wait for other scripts and can loaded in parallel with other async scripts.
+-->
+<script async src="<%= site.basePath %><%= site.global_js %>"></script>

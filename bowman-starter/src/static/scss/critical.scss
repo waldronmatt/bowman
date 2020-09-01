@@ -1,24 +1,26 @@
 /*
-  Inline css that is critical to
-  initial page rendering
+  Inline css that is critical to initial page rendering
   for optimal performance
 
-  For simplicity we inline this
-  in every single page within
-  <style></style> tags inside
-  <head></head>
+  For simplicity we inline this in every single page
+  within style tags inside the head
 
-  We also leave critical css duplicated
-  inside our app css entrypoint
-  for simplification and because
-  this will be cached by browsers anyways
+  We also leave critical css duplicated inside our app css entrypoint
+  for simplification and because this will be cached by browsers anyways
 
   https://css-tricks.com/annotating-critical-css/#comment-1600799
 */
 
 @charset "UTF-8";
 
-/* Vendors */
-
+/* Configurations and helpers */
 @import
-  'vendors/normalize';
+  'abstracts/variables',
+  'abstracts/mixins',
+  'abstracts/breakpoints';
+
+/* Base styles */
+@import
+  'base/base',
+  'base/fonts',
+  'base/typography';

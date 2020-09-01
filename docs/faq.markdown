@@ -30,12 +30,12 @@ permalink: /faq
                     site.json
                 scss/
                     app.scss
+        .babelrc
         .eslintignore
         .eslintrc
         .stylelintignore
         .stylelintrc.json
         ignore.js
-        postcss.config.js
         package.json
         package-lock.json
                 

@@ -19,6 +19,10 @@ module.exports = merge(common, {
   ],
   optimization: {
     minimize: true,
+    splitChunks: {
+      // The name parameter corresponds to the name of the split chunks.
+      name: false,
+    },
     minimizer: [
       // minimize js
       new TerserPlugin({
