@@ -22,6 +22,11 @@
     "webpack",
     "browsersync"
   ],
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  },
   "browserslist": [
     "defaults",
     "not ie < 11",

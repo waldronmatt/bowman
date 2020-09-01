@@ -35,14 +35,15 @@ module.exports = {
           {
             loader: "css-loader",
           },
-          // loader for webpack to process css with PostCSS
+          /* 
+            loader for webpack to process css with PostCSS
+
+            postcss-loader should be placed after css-loader and style-loader, 
+            but before other preprocessor loaders like e.g sass|less|stylus-loader
+            https://github.com/webpack-contrib/postcss-loader#config-cascade
+          */
           {
             loader: 'postcss-loader',
-            options: {
-              config: {
-                path: './postcss.config.js',
-              },
-            },
           },
           // loads a sass/scss file and compiles it to css
           {
@@ -90,6 +91,19 @@ module.exports = {
       fileName: 'static-manifest.json',
     }),
   ],
+  /* 
+    SplitChunks finds modules which are shared between chunks and splits them 
+    into separate chunks to reduce duplication or separate vendor modules from application modules.
+  */
+  optimization: {
+    splitChunks: {
+      /*
+        Optimization over Async and Sync Module (a default'ish' setting for chuncks)
+        https://medium.com/dailyjs/webpack-4-splitchunks-plugin-d9fbbe091fd0
+      */
+      chunks: 'all',
+    },
+  },
   performance : {
     hints : 'warning',
   },
