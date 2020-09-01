@@ -30,6 +30,7 @@ permalink: /faq
                     site.json
                 scss/
                     app.scss
+        .babelrc
         .eslintignore
         .eslintrc
         .stylelintignore

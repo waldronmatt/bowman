@@ -57,19 +57,18 @@ module.exports = {
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
-          options: {
-            /* 
-              A collection of babel plugins that allows you to use the latest 
-              JavaScript without needing to micromanage which syntax transforms 
-              (and optionally, browser polyfills) are needed by your target environment(s)
-            */
-            presets: ['@babel/preset-env'],
-            /*
-              Externalise references to helpers and builtins, automatically 
-              polyfilling your code without polluting globals
-            */
-            plugins: ['@babel/plugin-transform-runtime'],
-          },
+          /* 
+            @babel/preset-env (.babelrc)
+            A collection of babel plugins that allows you to use the latest 
+            JavaScript without needing to micromanage which syntax transforms 
+            (and optionally, browser polyfills) are needed by your target environment(s)
+          */
+          
+          /*
+            @babel/plugin-transform-runtime (.babelrc)
+            Externalise references to helpers and builtins, automatically 
+            polyfilling your code without polluting globals
+          */
         },
       },
     ],

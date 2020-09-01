@@ -1,3 +1,10 @@
+/* 
+    For polyfilling features like promises/object.assign for older browsers
+    https://babeljs.io/docs/en/babel-polyfill
+*/
+// import "core-js/stable";
+// import "regenerator-runtime/runtime";
+
 /* Components */
 
 /* Layouts */
