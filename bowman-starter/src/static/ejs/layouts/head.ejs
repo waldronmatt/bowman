@@ -6,23 +6,31 @@
 
 <base href="<%= site.basePath %>">
 <link rel="icon" type="image/png" href="<%= site.basePath %>favicon.png">
-<link rel="preload" href="<%= site.basePath %>static/fonts/tajawal-regular.ttf" as="font" type="font/ttf" crossorigin>
+<link crossorigin rel="preload" href="<%= site.basePath %>static/fonts/tajawal-regular.ttf" as="font" type="font/ttf">
 
 <!--
-  inject minified critical css
+  Inject minified critical css
   https://jonassebastianohlsson.com/criticalpathcssgenerator/#what-is
+
+  Comment out ejs variable inside style tags to 
+  prevent stylelint errors (will still inject css)
+
+  Recommended to leave line commented below for development builds
 -->
+
+<!-- <style>/* <%- site.criticalStyles %> */</style> -->
 
 <!-- 
-  comment out ejs variable inside style tags
-  this is so we can prevent stylelint errors
+  Handle non-critical css
+
+  link rel="preload" as="style" loads the CSS file in a non-render-blocking way.
+  onload="..." makes sure that CSS file is parsed and loaded after the site loads and the onload function is deleted.
+  noscript fallback makes sure that the CSS loads the standard way if JavaScript is not available.
+  https://dev.to/prototyp/improving-website-performance-by-eliminating-render-blocking-css-and-javascript-28ei
+
+  Other methods
+  https://stackoverflow.com/questions/32759272/how-to-load-css-asynchronously
 -->
 
-
-<!-- <style>/* <%= site.criticalStyles %> */</style> -->
-
-
-<!-- 
-  recommended to leave line commented above
-  for development builds
--->
+<link crossorigin rel="preload" href="<%= site.basePath %><%= site.global_css %>" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="<%= site.basePath %><%= site.global_css %>"></noscript>
