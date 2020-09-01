@@ -47,26 +47,23 @@ index.json
         "title": "Hello World!",
             "info": {
                 "header": "Bowman",
-                "description": "Create static sites using...",
+                "description": "A simple static site generator...",
                 "link": {
                     "text": "Click here to read the documentation.",
                     "href": "https://www.myprojectsite.com"
                 },
                 "features": [
                     {
-                        "list": "Keep things DRY:..."
+                        "list": "Recursively generates page markup"
                     },
                     {
-                        "list": "Separation of concerns:..."
+                        "list": "Recursively finds and outputs entry points"
                     },
                     {
-                        "list": "Use familiar languages and linters:..."
+                        "list": "Hot reloading of pages and assets"
                     },
                     {
-                        "list": "Develop faster:..."
-                    },
-                    {
-                        "list": "Be production-ready:..."
+                        "list": "Asset bundling, cache prevention, and code splitting support"
                     }
                 ]
             }

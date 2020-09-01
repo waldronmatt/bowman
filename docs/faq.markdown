@@ -35,7 +35,6 @@ permalink: /faq
         .stylelintignore
         .stylelintrc.json
         ignore.js
-        postcss.config.js
         package.json
         package-lock.json
                 
