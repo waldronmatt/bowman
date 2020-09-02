@@ -1,3 +1,4 @@
+const fse = require('fs-extra');
 const path = require('path');
 const glob = require('glob');
 const minify = require('@node-minify/core');
@@ -11,11 +12,15 @@ const basePath = '/';
 // read pages
 const files = glob.sync('**/*.@(ejs)', { cwd: `./src/${ps.pagesPath}` });
 
+// inject critical css for production performance boost
+const staticManifest = require('../../dist/static-manifest.json');
+const criticalStyles = fse.readFileSync(`dist/${staticManifest['static/css/critical.css']}`, 'utf8');
+
 console.time('generated all project pages in');
 
 files.forEach((file) => {
   console.time('page generated in');
-  buildMarkup(file, basePath);
+  buildMarkup(file, basePath, criticalStyles);
   const getFile = path.parse(file);
   const destPath = path.join('./dist', getFile.dir);
 
