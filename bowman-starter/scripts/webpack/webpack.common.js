@@ -95,12 +95,42 @@ module.exports = {
     into separate chunks to reduce duplication or separate vendor modules from application modules.
   */
   optimization: {
+    // https://medium.com/jspoint/react-router-and-webpack-v4-code-splitting-using-splitchunksplugin-f0a48f110312
     splitChunks: {
-      /*
-        Optimization over Async and Sync Module (a default'ish' setting for chuncks)
-        https://medium.com/dailyjs/webpack-4-splitchunks-plugin-d9fbbe091fd0
-      */
-      chunks: 'all',
+      // https://webpack.js.org/plugins/split-chunks-plugin/#split-chunks-example-2
+      cacheGroups: {
+        default: false,
+        vendors: false,
+        // vendor chunk
+        vendor: {
+          // name of the chunk
+          name: 'vendor',
+          /*
+            Optimization over Async and Sync Module (a default'ish' setting for chuncks)
+            https://medium.com/dailyjs/webpack-4-splitchunks-plugin-d9fbbe091fd0
+          */
+          chunks: 'all',
+          // import file path containing node_modules
+          test: /node_modules/,
+          priority: 20,
+        },
+        // https://webpack.js.org/plugins/split-chunks-plugin/#split-chunks-example-1
+        common: {
+          // create a commons chunk, which includes all code shared between entry points
+          name: 'common',
+          // minimum number of chunks that must share a module before splitting
+          minChunks: 2,
+          // async + async chunks
+          chunks: 'all',
+          priority: 10,
+          /* 
+            If the current chunk contains modules already split out from the main bundle, 
+            it will be reused instead of a new one being generated.
+          */
+          reuseExistingChunk: true,
+          enforce: true,
+        },
+      },
     },
   },
   performance : {

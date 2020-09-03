@@ -35,7 +35,7 @@ const buildMarkup = (file, basePath, criticalStyles) => {
   // render page
   const pageContent = frontMatter(content);
   const templateConfig = Object.assign({}, 
-    config(basePath, staticManifest[ps.global_css], staticManifest[ps.global_js], ps.alias_ejs, data, page_css, page_js, criticalStyles), {
+    config(basePath, data, page_css, page_js, criticalStyles), {
       page: pageContent.attributes
     },
   );
