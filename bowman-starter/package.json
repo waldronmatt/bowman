@@ -38,7 +38,6 @@
   "author": "Matthew Waldron",
   "license": "MIT",
   "devDependencies": {
-    "@babel/core": "^7.9.6",
     "@babel/plugin-transform-runtime": "^7.9.6",
     "@babel/preset-env": "^7.9.6",
     "@node-minify/core": "^5.3.0",

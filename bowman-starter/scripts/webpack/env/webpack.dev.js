@@ -61,15 +61,6 @@ module.exports = merge(common, {
     }),
   ],
   optimization: {
-    splitChunks: {
-      /* 
-        The name parameter corresponds to the name of the split chunks. 
-        Providing true will automatically generate a name based on chunks and cache group key.
-        I strongly advise you to enable this option for debugging during development only.
-        https://medium.com/@Yoriiis/the-real-power-of-webpack-4-splitchunks-plugin-fad097c45ba0
-      */
-      name: true,
-    },
     // don't minimize so we can debug
     minimize: false,
   },
