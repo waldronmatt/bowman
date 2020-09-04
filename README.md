@@ -20,7 +20,7 @@ Use core front-end languages and JavaScript-like technologies to build your site
 ## Workflow
 Take advantage of Bowman's build scripts with performance and best practices built in using Webpack and Browsersync.
 - Bowman
-    - Recursively find , generate, and minify html markup
+    - Recursively find, generate, and minify html markup
     - Integration with Browsersync and Webpack middleware to hot reload pages
     - JSON cache prevention and file watch debouncing for improved hot-reloading
 - Webpack
