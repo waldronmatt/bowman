@@ -11,18 +11,21 @@
   directly including core-js/stable (to polyfill ECMAScript features) 
   and regenerator-runtime/runtime (needed to use transpiled generator functions)
 */
+
 import 'core-js/es/object';
 // import 'core-js/es/map';
 // import 'core-js/es/string';
 // import 'core-js/es/array';
+
 // Standalone runtime for Regenerator-compiled generator and async functions.
 // import 'regenerator-runtime/runtime';
 
-// https://github.com/zloirock/core-js#ecmascript-object
 let foo = { q: 1, w: 2 };
 let bar = { e: 3, r: 4 };
 let baz = { t: 5, y: 6 };
+
 Object.assign(foo, bar, baz);
+// https://github.com/zloirock/core-js#ecmascript-object
 
 console.log('testing the object polyfill (for older browsers):');
 console.log(foo);

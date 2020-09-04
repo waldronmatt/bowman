@@ -1,14 +1,13 @@
 /*
-  Inline css that is critical to initial page rendering
-  for optimal performance
-
-  For simplicity we inline this in every single page
-  within style tags inside the head
+  Inline css that is critical to initial page rendering for optimal performance
+  For simplicity we inline this in every single page within style tags inside the head
 
   We also leave critical css duplicated inside our app css entrypoint
   for simplification and because this will be cached by browsers anyways
 
   https://css-tricks.com/annotating-critical-css/#comment-1600799
+
+  ***Critical css only injected on prod builds
 */
 
 @charset "UTF-8";

@@ -12,14 +12,14 @@
     https://web.dev/preload-optional-fonts/
   */
   font-display: optional;
-  src: url('/static/fonts/tajawal-v3-latin-regular.eot'); /* IE9 Compat Modes */
+  src: url('/static/fonts/tajawal-v3-latin-regular.eot'); // IE9 Compat Modes
   src:
-    /* local() function allows users to use their local copy of the font if present */
+    // local() function allows users to use their local copy of the font if present
     local('Tajawal'),
     local('Tajawal-Regular'),
-    url('/static/fonts/tajawal-v3-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-    url('/static/fonts/tajawal-v3-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
-    url('/static/fonts/tajawal-v3-latin-regular.woff') format('woff'), /* Modern Browsers */
-    url('/static/fonts/tajawal-v3-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
-    url('/static/fonts/tajawal-v3-latin-regular.svg#Tajawal') format('svg'); /* Legacy iOS */
+    url('/static/fonts/tajawal-v3-latin-regular.eot?#iefix') format('embedded-opentype'), // IE6-IE8
+    url('/static/fonts/tajawal-v3-latin-regular.woff2') format('woff2'), // Super Modern Browsers
+    url('/static/fonts/tajawal-v3-latin-regular.woff') format('woff'), // Modern Browsers
+    url('/static/fonts/tajawal-v3-latin-regular.ttf') format('truetype'), // Safari, Android, iOS
+    url('/static/fonts/tajawal-v3-latin-regular.svg#Tajawal') format('svg'); // Legacy iOS
 }

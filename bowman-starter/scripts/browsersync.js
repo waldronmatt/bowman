@@ -66,7 +66,7 @@ bs.init({
     {
       match: ["src/static/**/**.{jpg,jpeg,png,gif,svg,pdf,ttf}"],
       fn: function () {
-        // this npm script will re-compile image manifest and rebuild pages
+        // this npm script will re-build manifest and pages
         exec("npm run rebuild", function(err, stdout, stderr) {
           err ? console.log(stderr) : console.log(stdout);
           bs.reload();

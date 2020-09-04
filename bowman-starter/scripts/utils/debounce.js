@@ -36,7 +36,7 @@ const debounce = (func, wait) => {
     clearTimeout(timeout);
     
     /*
-    / Restart the debounce waiting period.
+      Restart the debounce waiting period.
       setTimeout returns a truthy value (it differs in web vs Node)
     */
     timeout = setTimeout(later, wait);
