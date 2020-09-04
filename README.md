@@ -10,12 +10,40 @@ A simple static site generator with an integrated toolchain for efficient develo
 
 Bowman is a simple static site generator powered by Node.js, Webpack, and Browsersync. Bowman comes with pre-configured scripts to bundle assets, generate markup, and hot-reload pages. Pages are generated using the J.E.N. technology core (JSON - data, EJS - templating, Node.js - markup generation).
 
-## Features
+## Languages
+Use core front-end languages and JavaScript-like technologies to build your site.
+- Next-Gen JavaScript
+- Sass
+- EJS - generate HTML markup with plain JavaScript
+- JSON - store page text/data
 
-- Recursively generates page markup
-- Recursively finds and outputs entry points
-- Hot reloading of pages and assets
-- Asset bundling, cache prevention, and code splitting support
+## Workflow
+Take advantage of Bowman's build scripts with performance and best practices built in using Webpack and Browsersync.
+- Bowman
+    - Recursively find , generate, and minify html markup
+    - Integration with Browsersync and Webpack middleware to hot reload pages
+    - JSON cache prevention and file watch debouncing for improved hot-reloading
+- Webpack
+    - Recursively find and output entry points
+    - Transpile Next-Gen JavaScript using Babel
+    - Compile Sass using Webpack loaders
+    - Hot-reload js and css
+    - Code splitting using SplitChuncks and dynamic loading
+    - Cache busting with [contenthash]
+    - Manifest generation for assets so you can reference in pages
+    - Minify js and css
+    - Compress images
+    - Lint code using stylelint and eslint
+    - Autoprefixer and polyfill support
+    - Optimized dev builds
+- Browsersync
+    - Serve pages and assets for development
+
+## Bowman Starter Template
+- 100% Lighthouse Score on Mobile and Desktop (Excluding PWA)
+- Eliminates render blocking js/css
+- Critical css, dynamic loading, and vendor SplitChuncks integration for production builds
+- Suggested folder structure for an organized project
 
 ## Installation
 
