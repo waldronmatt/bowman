@@ -36,7 +36,7 @@ module.exports = {
         https://github.com/webpack-contrib/copy-webpack-plugin/issues/104
       */
       map: (file) => {
-        file.name = file.name.replace(/(\.[a-f0-9]{32})(\..*)$/, '$2');
+        file.name = file.name.replace(/(\.[a-f0-9]{8})(\..*)$/, '$2');
         return file;
       },
     }),
