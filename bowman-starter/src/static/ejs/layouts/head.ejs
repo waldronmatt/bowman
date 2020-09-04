@@ -6,6 +6,7 @@
 
 <base href="<%= site.basePath %>">
 <link rel="icon" type="image/png" href="<%= site.basePath %>favicon.png">
+
 <!--
   Without crossorigin, the preloaded font is ignored by the browser, and a new fetch takes place. 
   This is because fonts are expected to be fetched anonymously by the browser, 
@@ -16,18 +17,13 @@
 -->
 <link rel="preload" as="font" href="<%= site.basePath %>static/fonts/tajawal-v3-latin-regular.woff2" type="font/woff2" crossorigin>
 
-<!--
+<!-- 
   Inject minified critical css
   https://jonassebastianohlsson.com/criticalpathcssgenerator/#what-is
 
-  Recommended to leave line commented below for development builds
--->
-
-<!-- 
   Why don't we just put the criticalStyles var inside style tags directly?
-
-  1) Stylelint keeps throwing errors despite stylintignore configuration
-  2) Our node minifier can't understand css independently so it will strip out criticalStyles upon minification
+    1) Stylelint keeps throwing errors despite stylintignore configuration
+    2) Our node minifier can't understand css independently so it will strip out criticalStyles upon minification
   
   Security shouldn't be an issue since we are injecting our own data
   https://developer.mozilla.org/en-US/docs/Web/API/Element/insertAdjacentHTML
@@ -45,6 +41,5 @@
   Other methods
   https://stackoverflow.com/questions/32759272/how-to-load-css-asynchronously
 -->
-
 <link crossorigin rel="preload" href="<%= site.basePath %><%= site.global_css %>" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="<%= site.basePath %><%= site.global_css %>"></noscript>

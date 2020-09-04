@@ -10,13 +10,14 @@ permalink: /site-structure/js-structure
 
         src/
             static/
-                ejs/
+                js/
                     components/
                     layouts
                     pages/
                     vendors/
                     app.js
                     _load-apps.js
+                    _polyfills.js
 
 **components** - component-specific scripts
 
@@ -29,3 +30,5 @@ permalink: /site-structure/js-structure
 **app.js** - js entrypoint for your site
 
 **_load-apps.js** - code splitting/dynamic imports for your js scripts
+
+**_polyfills.js** - polyfill imports

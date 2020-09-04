@@ -12,7 +12,7 @@ const basePath = '/';
 // read pages
 const files = glob.sync('**/*.@(ejs)', { cwd: `./src/${ps.pagesPath}` });
 
-// inject critical css for production performance boost
+// inject critical css for prod builds
 const staticManifest = require('../../dist/static-manifest.json');
 const criticalStyles = fse.readFileSync(`dist/${staticManifest['static/css/critical.css']}`, 'utf8');
 

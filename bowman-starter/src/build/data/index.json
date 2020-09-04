@@ -18,7 +18,7 @@
         "list": "Hot reloading of pages and assets"
       },
       {
-        "list": "Asset bundling, cache prevention, and code splitting support"
+        "list": "Asset bundling, cache busting, and code splitting support"
       }
     ]
   }

@@ -44,7 +44,7 @@ module.exports = {
       // copy over misc assets
       { from:'./src/static/fonts/', to: 'static/fonts', },
       { from:'./src/favicon.png', to: 'favicon.png', },
-      // vendor files you don't want webpack to compile go below
+      // files you don't want webpack to compile go below (e.g. vendors)
     ]),
   ],
   performance : {
