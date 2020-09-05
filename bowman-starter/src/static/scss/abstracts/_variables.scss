@@ -1,23 +1,23 @@
 // Text defaults
 /// @type List
-$font-type: 'Tajawal', sans-serif !default;
+$font-type: 'Tajawal', serif !default;
 
 /// @type number
 $default-font-size: 1.25em !default;
 
 /// @type number
-$default-margin: 0.7em !default;
+$default-margin: 1.34em !default;
 
 /// @type number
-$default-line-height: 1.625em !default;
+$default-line-height: 2.5em !default;
+
+/// @type number
+$h1-font-size: 2rem !default;
+
+/// @type number
+$h2-font-size: 1.5rem !default;
 
 // Website color scheme
-/// @type Color
-$black: #000 !default;
-
-/// @type Color
-$white: #fff !default;
-
 /// @type Color
 $dark-blue: #333a56 !default;
 

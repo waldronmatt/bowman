@@ -3,33 +3,12 @@ html {
   box-sizing: border-box;
 }
 
-/*
-  Make all elements from the DOM inherit from the parent box-sizing
-  Since `*` has a specificity of 0, it does not override the `html` value
-  making all elements inheriting from the root box-sizing value
-
-  https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
-*/
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
-}
-
 body {
-  /*
-    Fallback font, overriden by font-face
-    So we don't have invisible text on webfont load
-  */
-  font-family: "Palatino", serif;
+  font-family: $font-type;
+  line-height: $default-line-height;
+  margin: $default-margin / 2;
 
   @include md {
-    margin: 2em;
+    margin: $default-margin;
   }
-}
-
-.container {
-  @include left-adjusted-center;
-
-  @include md { width: 700px; }
 }

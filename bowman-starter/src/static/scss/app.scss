@@ -5,19 +5,21 @@
 
 @charset "UTF-8";
 
+/* Vendors */
+@import
+  'vendors/reset',
+  'vendors/sanitize';
+
 /* Configurations and helpers */
 @import
   'abstracts/variables',
   'abstracts/mixins',
   'abstracts/breakpoints';
 
-/* Vendors */
-@import
-  'vendors/normalize';
-
 /* Base styles */
 @import
   'base/base',
+  'base/helpers',
   'base/fonts',
   'base/typography';
 

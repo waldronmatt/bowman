@@ -1,39 +1,29 @@
+h1 {
+  font-size: $h1-font-size;
+}
+
+h2 {
+  font-size: $h2-font-size;
+}
+
+// bullet alignment
+ul {
+  margin-left: $default-margin;
+}
+
+// make text a little bigger
+p,
+li {
+  font-size: $default-font-size;
+}
+
 // basic styling for links
 a {
   color: $light-blue;
   font-weight: bold;
-  text-decoration: none;
-  font-size: $default-font-size;
-  line-height: $default-line-height;
+  background-color: beige;
 
   @include on-event {
     color: $dark-blue;
-    text-decoration: underline;
   }
-}
-
-// basic typography styling
-h1,
-h2,
-h3,
-p,
-li,
-a {
-  font-family: $font-type;
-  margin: $default-margin;
-}
-
-h1,
-h2,
-h3,
-a {
-  display: block;
-  text-align: center;
-}
-
-p,
-li {
-  text-align: left;
-  font-size: $default-font-size;
-  line-height: $default-line-height;
 }
