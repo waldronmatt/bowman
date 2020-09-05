@@ -27,3 +27,32 @@ a {
     color: $dark-blue;
   }
 }
+
+main,
+section {
+  margin-bottom: $default-margin;
+
+  @include md {
+    @include left-adjusted-center;
+
+    width: 700px;
+  }
+}
+
+header,
+footer,
+.center {
+  @include md {
+    @include center;
+  }
+}
+
+img {
+  margin-bottom: $default-margin;
+  max-width: 75%;
+  height: auto;
+
+  @include lg {
+    max-width: 40%;
+  }
+}
