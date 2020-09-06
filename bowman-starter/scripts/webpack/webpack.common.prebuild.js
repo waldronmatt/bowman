@@ -43,7 +43,7 @@ module.exports = {
     new CopyWebpackPlugin([
       // copy over misc assets
       { from:'./src/static/fonts/', to: 'static/fonts', },
-      { from:'./src/favicon.png', to: 'favicon.png', },
+      { from:'./src/static/favicons/', to: '', },
       // files you don't want webpack to compile go below (e.g. vendors)
     ]),
   ],
