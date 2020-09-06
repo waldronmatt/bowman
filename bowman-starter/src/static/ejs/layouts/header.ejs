@@ -1,4 +1,11 @@
 <header>
   <h1><%= sharedData.header.title %></h1>
-  <a href="<%= site.basePath %>"><img src="<%= site.basePath %><%= site.assetsManifest['static/images/bowman.png'] %>" alt="bowman-logo"></a>
+  <a href="<%= site.basePath %>">
+    <picture>
+      <!-- image fallback support -->
+      <source srcset="<%= site.basePath %><%= site.assetsManifest['static/images/bowman.webp'] %>" type="image/webp">
+      <source srcset="<%= site.basePath %><%= site.assetsManifest['static/images/bowman.png'] %>" type="image/png">
+      <img src="<%= site.basePath %><%= site.assetsManifest['static/images/bowman.png'] %>" alt="bowman-logo">
+    </picture>
+  </a>
 </header>
