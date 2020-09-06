@@ -33,6 +33,7 @@ Take advantage of Bowman's build scripts with performance and best practices bui
     - Manifest generation for assets so you can reference in pages
     - Minify js and css
     - Compress images
+    - Generate next-gen image formats
     - Lint code using stylelint and eslint
     - Autoprefixer support
     - Optimized dev builds
@@ -43,6 +44,7 @@ Take advantage of Bowman's build scripts with performance and best practices bui
 - 100% Lighthouse Score on Mobile and Desktop (Excluding PWA)
 - Eliminates render blocking js/css
 - Critical css, dynamic loading, and vendor SplitChuncks integration for production builds
+- Next-gen image and fallback support for production builds
 - Includes popular css reset and normalizing libraries
 - Includes polyfill support
 - Suggested folder structure for an organized project
