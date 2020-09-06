@@ -1,11 +1,30 @@
+<% let image = sharedData.header.image; %>
+<% let manifestHasNextGenImage = site.assetsManifest[`static/images/${image.name}.webp`]; %>
+
 <header>
   <h1><%= sharedData.header.title %></h1>
   <a href="<%= site.basePath %>">
     <picture>
-      <!-- image fallback support -->
-      <source srcset="<%= site.basePath %><%= site.assetsManifest['static/images/bowman.webp'] %>" type="image/webp">
-      <source srcset="<%= site.basePath %><%= site.assetsManifest['static/images/bowman.png'] %>" type="image/png">
-      <img src="<%= site.basePath %><%= site.assetsManifest['static/images/bowman.png'] %>" alt="bowman-logo">
+        <!-- 
+          Generate image fallback support for prod builds
+          For dev builds, simply output the img tag so we don't have broken images
+
+          Since imagemin webpack plugin might take a while to compress images we have this plugin enabled only on prod builds.
+          And imageminwebp webpack plugin depends on imagemin webpack plugin to generate the webp images.
+
+          If your browser supports next-gen images, it will default to it even on dev builds.
+          But then our images will be broken since we only generate next-gen images for prod builds.
+
+          To fix this, we do a check on the manifest to see if the build script output a next-gen image.
+          If true, we generate image fallback source tags for prod builds.
+          If false, we simply output the img so we have non-broken images in dev builds
+        -->
+      <% image.fallback.forEach((el) => { %>
+        <% if (manifestHasNextGenImage) { %>
+          <source srcset="<%= site.basePath %><%= site.assetsManifest[`static/images/${image.name}.${el.ext}`] %>" type="image/<%= el.ext %>">
+        <% } %>
+      <% }) %>
+      <img src="<%= site.basePath %><%= site.assetsManifest[`static/images/${image.fullname}`] %>" alt="<%= image.alt %>">
     </picture>
   </a>
 </header>

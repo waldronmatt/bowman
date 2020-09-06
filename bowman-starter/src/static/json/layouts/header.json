@@ -1,5 +1,18 @@
 { 
   "header": {
-    "title": "Bowman"
+    "title": "Bowman",
+    "image": {
+      "fullname": "bowman.png",
+      "name": "bowman",
+      "alt": "bowman-logo",
+      "fallback": [
+        {
+          "ext": "webp"
+        }, 
+        {
+          "ext": "png"
+        }
+      ]
+    }
   }
 }
