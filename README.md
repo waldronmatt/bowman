@@ -34,7 +34,7 @@ Take advantage of Bowman's build scripts with performance and best practices bui
     - Minify js and css
     - Compress images
     - Lint code using stylelint and eslint
-    - Autoprefixer and polyfill support
+    - Autoprefixer support
     - Optimized dev builds
 - Browsersync
     - Serve pages and assets for development
@@ -43,6 +43,8 @@ Take advantage of Bowman's build scripts with performance and best practices bui
 - 100% Lighthouse Score on Mobile and Desktop (Excluding PWA)
 - Eliminates render blocking js/css
 - Critical css, dynamic loading, and vendor SplitChuncks integration for production builds
+- Includes popular css reset and normalizing libraries
+- Includes polyfill support
 - Suggested folder structure for an organized project
 
 ## Installation

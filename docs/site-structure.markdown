@@ -47,6 +47,7 @@ permalink: /site-structure/
             static/
                 docs/
                 ejs/
+                favicons/
                 fonts/
                 images/
                 js/
