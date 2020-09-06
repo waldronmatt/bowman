@@ -5,7 +5,12 @@
 <meta name="viewport" content="width=device-width" />
 
 <base href="<%= site.basePath %>">
-<link rel="icon" type="image/png" href="<%= site.basePath %>favicon.png">
+
+<!-- https://favicon.io/favicon-generator/?t=b&ff=Cantarell&fs=110&fc=%23FFFFFF&b=rounded&bc=%23333a56 -->
+<link rel="apple-touch-icon" sizes="180x180" href="<%= site.basePath %>apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="<%= site.basePath %>favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="<%= site.basePath %>favicon-16x16.png">
+<link rel="manifest" href="<%= site.basePath %>site.webmanifest">
 
 <!--
   Without crossorigin, the preloaded font is ignored by the browser, and a new fetch takes place. 

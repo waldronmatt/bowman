@@ -19,15 +19,15 @@
   }
 }
 
-// Center
+// Center types
 @mixin center {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
 }
 
 @mixin left-adjusted-center {
   margin-left: auto;
   margin-right: auto;
-  text-align: center;
 }

@@ -1,9 +1,8 @@
-<div class="container">
-  <a rel="noreferrer" href="<%= data.info.link.href %>" target="_blank"><%= data.info.link.text %></a>
+<section>
   <p><strong><%= sharedData.features.title %></strong></p>
   <ul>
     <% data.info.features.forEach((el) => { %>
       <li><%= el.list %></li>
     <% }) %>
   </ul>
-</div>
+</section>
