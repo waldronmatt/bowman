@@ -73,7 +73,7 @@ Build and serve for production:
 
         npm run build
 
-## Usage
+## Useage
 
 ### Create the markup
 
