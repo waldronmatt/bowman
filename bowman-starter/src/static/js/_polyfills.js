@@ -13,7 +13,7 @@
   and regenerator-runtime/runtime (needed to use transpiled generator functions)
 */
 
-import 'core-js/es/object';
+import "core-js/es/object";
 // import 'core-js/es/map';
 // import 'core-js/es/string';
 // import 'core-js/es/array';
@@ -28,5 +28,5 @@ const baz = { t: 5, y: 6 };
 Object.assign(foo, bar, baz);
 // https://github.com/zloirock/core-js#ecmascript-object
 
-console.log('testing the object polyfill (for older browsers):');
+console.log("testing the object polyfill (for older browsers):");
 console.log(foo);

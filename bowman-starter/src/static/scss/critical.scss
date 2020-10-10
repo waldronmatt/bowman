@@ -13,13 +13,11 @@
 @charset "UTF-8";
 
 /* Configurations and helpers */
-@import
-  'abstracts/variables',
+@import 'abstracts/variables',
   'abstracts/mixins',
   'abstracts/breakpoints';
 
 /* Base styles */
-@import
-  'base/base',
+@import 'base/base',
   'base/fonts',
   'base/typography';

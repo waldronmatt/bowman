@@ -6,19 +6,16 @@
 @charset "UTF-8";
 
 /* Vendors */
-@import
-  'vendors/reset',
+@import 'vendors/reset',
   'vendors/sanitize';
 
 /* Configurations and helpers */
-@import
-  'abstracts/variables',
+@import 'abstracts/variables',
   'abstracts/mixins',
   'abstracts/breakpoints';
 
 /* Base styles */
-@import
-  'base/base',
+@import 'base/base',
   'base/fonts',
   'base/typography';
 

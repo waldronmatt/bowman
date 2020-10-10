@@ -1,14 +1,14 @@
 /* vendor packages from node_modules */
-import './_polyfills';
+import "./_polyfills";
 
 /* Components */
 
 /* Layouts */
-import './layouts/_footer';
+import "./layouts/_footer";
 
 /* Vendors */
 
 /* Page specific scripts */
 
 /* Dynamic imports */
-import './_load-apps';
+import "./_load-apps";

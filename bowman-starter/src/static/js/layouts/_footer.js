@@ -1,1 +1,1 @@
-import './utils/_copyright-year';
+import "./utils/_copyright-year";
