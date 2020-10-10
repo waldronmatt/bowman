@@ -14,6 +14,8 @@
 */
 
 import "core-js/es/object";
+// promise polyfill needed to resolve webpack dynamic imports
+import "core-js/features/promise";
 // import 'core-js/es/map';
 // import 'core-js/es/string';
 // import 'core-js/es/array';
