@@ -1,4 +1,5 @@
-/* 
+/* eslint-disable no-console */
+/*
   You can use this file to place all your polyfill imports
   Feel free to comment/un-comment the select polyfills below
 
@@ -7,8 +8,8 @@
 */
 
 /*
-  As of Babel 7.4.0, @babel/polyfill has been deprecated in favor of 
-  directly including core-js/stable (to polyfill ECMAScript features) 
+  As of Babel 7.4.0, @babel/polyfill has been deprecated in favor of
+  directly including core-js/stable (to polyfill ECMAScript features)
   and regenerator-runtime/runtime (needed to use transpiled generator functions)
 */
 
@@ -20,9 +21,9 @@ import 'core-js/es/object';
 // Standalone runtime for Regenerator-compiled generator and async functions.
 // import 'regenerator-runtime/runtime';
 
-let foo = { q: 1, w: 2 };
-let bar = { e: 3, r: 4 };
-let baz = { t: 5, y: 6 };
+const foo = { q: 1, w: 2 };
+const bar = { e: 3, r: 4 };
+const baz = { t: 5, y: 6 };
 
 Object.assign(foo, bar, baz);
 // https://github.com/zloirock/core-js#ecmascript-object
