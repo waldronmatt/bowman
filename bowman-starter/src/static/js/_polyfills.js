@@ -27,7 +27,6 @@ const bar = { e: 3, r: 4 };
 const baz = { t: 5, y: 6 };
 
 Object.assign(foo, bar, baz);
-// https://github.com/zloirock/core-js#ecmascript-object
 
-console.log("testing the object polyfill (for older browsers):");
+console.log("Polyfill testing - core-js object polyfill:");
 console.log(foo);

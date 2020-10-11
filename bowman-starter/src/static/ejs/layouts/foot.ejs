@@ -1,13 +1,13 @@
 <!--
   Inline js that is critical to initial page rendering for optimal performance
 
-  Insert using script tag before the body closing tag. 
-  That way we make sure that JavaScript doesn't block content render and 
+  Insert using script tag before the body closing tag.
+  That way we make sure that JavaScript doesn't block content render and
   all available DOM nodes are created and available to JavaScript code.
   https://dev.to/prototyp/improving-website-performance-by-eliminating-render-blocking-css-and-javascript-28ei
 -->
 
-<!-- 
+<!--
   Fallback for browsers not supporting 'preload' css
   https://bugzilla.mozilla.org/show_bug.cgi?id=1405761
 -->
@@ -25,11 +25,12 @@
 </script>
 
 <!--
-  Defer - for scripts needing the whole DOM and/or relative execution order is important. 
+  Defer - for scripts needing the whole DOM and/or relative execution order is important.
   It tells the browser to load the page first, then load the script in the background.
 
-  Async - for independent scripts that can be executed in any order. 
+  Async - for independent scripts that can be executed in any order.
   This script doesn't wait for other scripts and can loaded in parallel with other async scripts.
 -->
 <script async src="<%= site.basePath %><%= site.global_js %>"></script>
-<script async src="<%= site.basePath %><%= site.vendor_js %>"></script>
+<script async src="<%= site.basePath %><%= site.vendors_js %>"></script>
+<script async src="<%= site.basePath %><%= site.commons %>"></script>

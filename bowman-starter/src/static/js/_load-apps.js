@@ -1,4 +1,4 @@
-// Enable webpack code splitting via dynamic imports
+/* CODE SPLITTING EXAMPLE - DYNAMIC IMPORTS */
 
 const loadApps = () => {
   /*

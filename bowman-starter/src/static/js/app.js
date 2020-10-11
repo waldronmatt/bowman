@@ -9,12 +9,8 @@
 */
 import "./_polyfills";
 
-/* Components */
-
 /* Layouts */
 import "./layouts/_footer";
-
-/* Page specific scripts */
 
 /* CODE SPLITTING EXAMPLE - DYNAMIC IMPORTS */
 /*
@@ -48,6 +44,11 @@ import { calledFunction } from "./examples/_tree-shaking-example";
   share the same module.
 
   Splitting shared modules reduces duplicated code and bundle size across multiple entrypoints.
+
+  NOTE: REMEMBER TO INCLUDE AN HTML SCRIPT REFERENCE TO COMMONS.JS
 */
+import sharedModule from "./examples/_splitchuncks-common-example";
 
 calledFunction();
+
+sharedModule();
