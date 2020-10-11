@@ -35,6 +35,12 @@
     "iOS 7",
     "last 3 iOS versions"
   ],
+  "sideEffects": [
+    "./src/static/js/_load-apps.js",
+    "./src/static/js/_polyfills.js",
+    "./src/static/js/layouts/utils/_copyright-year.js",
+    "./src/static/js/layouts/_footer.js"
+  ],
   "author": "Matthew Waldron",
   "license": "MIT",
   "devDependencies": {

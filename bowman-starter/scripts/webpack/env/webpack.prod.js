@@ -21,6 +21,8 @@ module.exports = merge(common, {
   ],
   optimization: {
     minimize: true,
+    // Webpack will identify any code it thinks isn’t being used and mark it during the initial bundling step
+    usedExports: true,
     minimizer: [
       // minimize js
       new TerserPlugin({

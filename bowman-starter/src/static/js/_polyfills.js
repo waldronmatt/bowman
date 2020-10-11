@@ -12,16 +12,15 @@
   directly including core-js/stable (to polyfill ECMAScript features)
   and regenerator-runtime/runtime (needed to use transpiled generator functions)
 */
-
 import "core-js/es/object";
 // promise polyfill needed to resolve webpack dynamic imports
 import "core-js/features/promise";
-// import 'core-js/es/map';
-// import 'core-js/es/string';
-// import 'core-js/es/array';
 
+// import "core-js/es/map";
+// import "core-js/es/string";
+// import "core-js/es/array";
 // Standalone runtime for Regenerator-compiled generator and async functions.
-// import 'regenerator-runtime/runtime';
+// import "regenerator-runtime/runtime";
 
 const foo = { q: 1, w: 2 };
 const bar = { e: 3, r: 4 };
