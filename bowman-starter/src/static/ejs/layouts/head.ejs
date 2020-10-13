@@ -7,10 +7,8 @@
 <base href="<%= site.basePath %>">
 
 <!-- https://favicon.io/favicon-generator/?t=b&ff=Tajawal&fs=110&fc=%23FFFFFF&b=rounded&bc=%23333a56 -->
-<link rel="apple-touch-icon" sizes="180x180" href="<%= site.basePath %>apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="<%= site.basePath %>favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="<%= site.basePath %>favicon-16x16.png">
-<link rel="manifest" href="<%= site.basePath %>site.webmanifest">
+<!-- Using the best quality favicon to feed into favicon webpack plugin: android-chrome-512x512 -->
+<%- include('./favicons') %>
 
 <!--
   Without crossorigin, the preloaded font is ignored by the browser, and a new fetch takes place.
