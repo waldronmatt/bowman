@@ -1,4 +1,4 @@
-{ 
+{
   "title": "Hello World!",
   "info": {
     "header": "What is Bowman?",
@@ -9,16 +9,19 @@
     },
     "features": [
       {
-        "list": "Recursively generates page markup"
+        "list": "A simple-to-use JavaScript-based static site generator with hot-reloading"
       },
       {
-        "list": "Recursively finds and outputs entry points"
+        "list": "Use core front-end languages and JavaScript-like technologies to build your site."
       },
       {
-        "list": "Hot reloading of pages and assets"
+        "list": "Utilize a complete workflow of industry-leading software (Webpack, Browsersync, Autoprefixer, Babel, Eslint, Stylelint, and more)"
       },
       {
-        "list": "Asset bundling, cache busting, and code splitting support"
+        "list": "Includes pre-configured Webpack scripts implementing the latest optimizations"
+      },
+      {
+        "list": "Start developing using Bowman's 100% Lighthouse Score template"
       }
     ]
   }

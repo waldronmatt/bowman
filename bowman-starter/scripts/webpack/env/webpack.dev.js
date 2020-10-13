@@ -8,12 +8,12 @@ const HardSourceWebpackPlugin = require('hard-source-webpack-plugin');
 
 module.exports = merge(common, {
   mode: 'development',
-  /* 
+  /*
     Map your compiled code back to your original source code.
 
-    For example, if you bundle three source files (a.js, b.js, and c.js) 
-    into one bundle (bundle.js) and one of the source files contains an error, 
-    the stack trace will simply point to bundle.js. 
+    For example, if you bundle three source files (a.js, b.js, and c.js)
+    into one bundle (bundle.js) and one of the source files contains an error,
+    the stack trace will simply point to bundle.js.
     If an error originates from b.js, the source map will tell you exactly that.
   */
   devtool: 'inline-source-map',
@@ -41,11 +41,11 @@ module.exports = merge(common, {
     */
     new HardSourceWebpackPlugin(),
     new webpack.HotModuleReplacementPlugin(),
-    /* 
+    /*
       Hot reload support for static assets (css, js)
-      
+
       We're using webpack-livereload instead of webpack-dev-server because
-      we want assets served by browsersync server, but we still want reloads 
+      we want assets served by browsersync server, but we still want reloads
       triggered from webpack's build pipeline.
     */
     new LiveReloadPlugin({

@@ -18,10 +18,10 @@ const buildMarkup = (file, basePath, criticalStyles) => {
 
   // get page data
   let data;
-  try { 
+  try {
     data = requireUncached(`../../src/${ps.dataPath}${getExtentionJSON}`);
     console.log(`getting json data at: src/${ps.dataPath}${getExtentionJSON}`);
-  } catch (error) { 
+  } catch (error) {
     throw Error('unable to render json data');
   }
 
@@ -34,7 +34,7 @@ const buildMarkup = (file, basePath, criticalStyles) => {
 
   // render page
   const pageContent = frontMatter(content);
-  const templateConfig = Object.assign({}, 
+  const templateConfig = Object.assign({},
     config(basePath, data, page_css, page_js, criticalStyles), {
       page: pageContent.attributes
     },

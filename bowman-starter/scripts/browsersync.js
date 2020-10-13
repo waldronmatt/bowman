@@ -48,7 +48,7 @@ bs.init({
         const pageReload = () => {
           return new Promise((resolve) => { resolve(bs.reload()) });
         };
-      
+
         const triggerPageChanges = async () => {
           try {
             console.log(`page ${event} initiated`);

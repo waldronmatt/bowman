@@ -13,8 +13,8 @@
 <link rel="manifest" href="<%= site.basePath %>site.webmanifest">
 
 <!--
-  Without crossorigin, the preloaded font is ignored by the browser, and a new fetch takes place. 
-  This is because fonts are expected to be fetched anonymously by the browser, 
+  Without crossorigin, the preloaded font is ignored by the browser, and a new fetch takes place.
+  This is because fonts are expected to be fetched anonymously by the browser,
   and the preload request is only made anonymous by using the this attribute
 
   https://web.dev/preload-optional-fonts/
@@ -22,20 +22,20 @@
 -->
 <link rel="preload" as="font" href="<%= site.basePath %>static/fonts/tajawal-v3-latin-regular.woff2" type="font/woff2" crossorigin>
 
-<!-- 
+<!--
   Inject minified critical css
   https://jonassebastianohlsson.com/criticalpathcssgenerator/#what-is
 
   Why don't we just put the criticalStyles var inside style tags directly?
     1) Stylelint keeps throwing errors despite stylintignore configuration
     2) Our node minifier can't understand css independently so it will strip out criticalStyles upon minification
-  
+
   Security shouldn't be an issue since we are injecting our own data
   https://developer.mozilla.org/en-US/docs/Web/API/Element/insertAdjacentHTML
 -->
 <script>document.head.insertAdjacentHTML("beforeend", `<style><%- site.criticalStyles %></style>`)</script>
 
-<!-- 
+<!--
   Handle non-critical css
 
   link rel="preload" as="style" loads the CSS file in a non-render-blocking way.
