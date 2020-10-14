@@ -1,10 +1,8 @@
 /* eslint-disable no-console */
+
 /*
   You can use this file to place all your polyfill imports
-  Feel free to comment/un-comment the select polyfills below
-
-  If you don't need these for your project, simply uninstall
-  core-js and regenerator-runtime using npm
+  If you don't need these for your project, uninstall core-js
 */
 
 /*
@@ -12,21 +10,50 @@
   directly including core-js/stable (to polyfill ECMAScript features)
   and regenerator-runtime/runtime (needed to use transpiled generator functions)
 */
-import "core-js/es/object";
-// promise polyfill needed to resolve webpack dynamic imports
+
 import "core-js/features/promise";
 
-// import "core-js/es/map";
-// import "core-js/es/string";
-// import "core-js/es/array";
-// Standalone runtime for Regenerator-compiled generator and async functions.
-// import "regenerator-runtime/runtime";
+/* SPLITCHUNCKS VENDOR EXAMPLE */
+/*
+  Webpack will generate a vendor.js file because the import path in _polyfills.js
+  is a dependency from node_modules
 
-const foo = { q: 1, w: 2 };
-const bar = { e: 3, r: 4 };
-const baz = { t: 5, y: 6 };
+  Splitting modules from external dependencies reduces bundle sizes and safeguards
+  pages from importing unncessary code when not used.
+*/
 
-Object.assign(foo, bar, baz);
+const polyfillAndVendorsTest = () => {
+  console.log(
+    "%c Polyfill testing",
+    "background: lightgreen; color: black; display: block;"
+  );
+  console.log(
+    "%c core-js/features/promise",
+    "background: lightblue; color: black; display: block;"
+  );
+  console.log(
+    "%c This works if you see 'Webpack Code Splitting' console.log in IE11.",
+    "background: yellow; color: black; display: block;"
+  );
+  console.log(
+    "The promise polyfill is needed to resolve webpack dynamic imports because import() calls use promises internally."
+  );
 
-console.log("Polyfill testing - core-js object polyfill:");
-console.log(foo);
+  console.log(
+    "%c Webpack Splitchuncks",
+    "background: lightgreen; color: black; display: block;"
+  );
+  console.log(
+    "%c vendors.js",
+    "background: lightblue; color: black; display: block;"
+  );
+  console.log(
+    "%c This works if you see a vendors.js file.",
+    "background: yellow; color: black; display: block;"
+  );
+  console.log(
+    "Webpack will generate a vendors.js file because the import path in _polyfills.js is a dependency from node_modules."
+  );
+};
+
+export default polyfillAndVendorsTest();
