@@ -42,8 +42,8 @@ module.exports = {
     }),
     new CopyWebpackPlugin([
       // copy over misc assets
-      { from:'./src/static/fonts/', to: 'static/fonts', },
-      // files you don't want webpack to compile go below (e.g. vendors)
+      { from:'./src/static/fonts/', to: 'static/fonts/', },
+      // files you don't want webpack to compile go below
     ]),
   ],
   performance : {

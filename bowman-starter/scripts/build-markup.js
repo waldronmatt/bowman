@@ -25,17 +25,13 @@ const buildMarkup = (file, basePath, criticalStyles, faviconRefs) => {
     throw Error('unable to render json data');
   }
 
-  // get page specific css, js paths
-  const page_css = staticManifest[`${ps.stylePath}${getFile.name}/${getFile.name}.css`];
-  const page_js = staticManifest[`${ps.scriptPath}${getFile.name}/${getFile.name}.js`];
-
   // read page file
   const content = fse.readFileSync(`./src/${ps.pagesPath}${file}`, 'utf-8');
 
   // render page
   const pageContent = frontMatter(content);
   const templateConfig = Object.assign({},
-    config(basePath, data, page_css, page_js, criticalStyles, faviconRefs), {
+    config(basePath, data, criticalStyles, faviconRefs), {
       page: pageContent.attributes
     },
   );

@@ -18,7 +18,7 @@
         "list": "Utilize a complete workflow of industry-leading software (Webpack, Browsersync, Autoprefixer, Babel, Eslint, Stylelint, and more)"
       },
       {
-        "list": "Includes pre-configured Webpack scripts implementing the latest optimizations"
+        "list": "Includes pre-configured Webpack scripts implementing the latest optimizations (open the console to test!)"
       },
       {
         "list": "Start developing using Bowman's 100% Lighthouse Score template"
