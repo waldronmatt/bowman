@@ -7,16 +7,13 @@
 */
 
 const loadApps = () => {
-  /*
-    Index page
-  */
   if (document.querySelectorAll("[data-load='index']").length) {
-    import(/* webpackChunkName: "_index" */ "./pages/index/_index")
+    import(
+      /* webpackChunkName: "_dynamic-load-print" */ "./_dynamic-load-print"
+    )
       .then((module) => module.default())
-      .catch(() => "An error occurred while loading index");
+      .catch(() => "An error occurred while loading dynamic-load-print");
   }
-  /*
-   */
 };
 
-export default loadApps();
+export default loadApps;

@@ -1,17 +1,19 @@
-/* Polyfills */
-import "./_polyfills";
+/* eslint-disable no-console */
 
-/* Layouts */
-import "./layouts/_footer";
-
-/* Dynamic imports */
-import "./_load-apps";
+import footer from "./layouts/_footer";
 
 /* Examples */
-import { calledFunction } from "./examples/_tree-shaking-example";
+import "./examples/_prefetch";
+import polyfillAndVendorTest from "./examples/_polyfills-splitchuncks-vendor";
+import { calledFunction } from "./examples/_tree-shaking";
+import sharedModule from "./examples/_splitchuncks-common";
+import loadApps from "./examples/_dynamic-load";
+import lazyLoadComponent from "./examples/_lazy-load";
 
-import sharedModule from "./examples/_splitchuncks-common-example";
+footer();
 
+polyfillAndVendorTest();
 calledFunction();
-
 sharedModule();
+loadApps();
+lazyLoadComponent();

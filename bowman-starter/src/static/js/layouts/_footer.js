@@ -1,1 +1,5 @@
-import "./utils/_copyright-year";
+import getCopyrightYear from "./utils/_copyright-year";
+
+export default () => {
+  getCopyrightYear();
+};

@@ -4,4 +4,4 @@ const getCopyrightYear = () => {
     .appendChild(document.createTextNode(new Date().getFullYear()));
 };
 
-export default getCopyrightYear();
+export default getCopyrightYear;

@@ -10,10 +10,10 @@ const displayToConsole = () => {
     "background: lightblue; color: black; display: block;"
   );
   console.log(
-    "%c This works if you see this on index.html and not on /terms.html.",
+    "%c This works if you see '_dynamic-load-print' in the head of the page.",
     "background: yellow; color: black; display: block;"
   );
   console.log("This script was dynamically loaded!");
 };
 
-export default displayToConsole();
+export default displayToConsole;

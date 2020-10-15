@@ -22,7 +22,7 @@ import "core-js/features/promise";
   pages from importing unncessary code when not used.
 */
 
-const polyfillAndVendorsTest = () => {
+const polyfillAndVendorTest = () => {
   console.log(
     "%c Polyfill testing",
     "background: lightgreen; color: black; display: block;"
@@ -56,4 +56,4 @@ const polyfillAndVendorsTest = () => {
   );
 };
 
-export default polyfillAndVendorsTest();
+export default polyfillAndVendorTest;

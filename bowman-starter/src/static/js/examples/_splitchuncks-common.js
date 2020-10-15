@@ -19,7 +19,7 @@ const sharedModule = () => {
     "background: lightblue; color: black; display: block;"
   );
   console.log(
-    "%c This works if you see this once from commons.js via prod build.",
+    "%c This works if you see a commons.js file generated.",
     "background: yellow; color: black; display: block;"
   );
   console.log(
