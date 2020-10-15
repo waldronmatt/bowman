@@ -25,25 +25,21 @@ These files contain Bowman's webpack configuration files, HTML markup generator 
 Bowman's HTML generator looks for matching file names under **content/** and **data/** directories. A 1:1 relationship of content and data for a page must exist or the build process will fail.
 
 You can structure your pages however you'd like; as long as the directory structure of **content/** matches **data/** and vice versa.
-
-## site.json
+            
+## ejs/layouts/
 
         src/
             static/
-                json/
-                    site.json
+                ejs/
+                    layouts/
+                        foot.ejs
+                        footer.ejs
+                        head.ejs
+                        header.ejs
 
 <br>
+ejs files inside layouts/ contains the global includes fed into templates/default.ejs. You can choose to include directly in default.ejs.
 
-        { 
-            "title": "Bowman",
-            "description": "Simple static site generator powered by Node.js and Webpack",
-            "keywords" : "bowman, static site generator, nodejs, javascript, webpack, browsersync"
-        }
-
-<br>
-site.json supplies metadata shared by pages in your project. Edit scripts/utils/config.js if you want to customize how this data is handled.
-            
 ## default.ejs
 
         src/
@@ -74,11 +70,43 @@ default.ejs is the fallback page template option for Bowman's HTML markup genera
     // render template
     const template = pageContent.attributes.template || 'default';
 
-## ignore.js
+## favicons.ejs
 
-Bowman uses a webpack prebuild script to generate a manifest file containing site assets before static assets are compiled in the main webpack configuration. This is useful for situation where you want to reference the manifest file in your js scripts.
+        src/
+            static/
+                ejs/
+                    favicons.ejs
 
-Because webpack mandates an entrypoint, a placeholder file (ignore.js) is used in the webpack prebuild script. More information can be found in ignore.js.
+<br>
+favicons.ejs stores references to generated favicons. This file is injected into layouts/head.ejs via prod builds.
+
+## logo.png
+
+       dist/
+       scripts/
+       src/
+       logo.png
+
+<br>
+The webpack favicon plugin will look to the root directory for logo.png to generate the favicons via prod builds.
+
+## site.json
+
+        src/
+            static/
+                json/
+                    site.json
+
+<br>
+
+        { 
+            "title": "Bowman",
+            "description": "Simple static site generator powered by Node.js and Webpack",
+            "keywords" : "bowman, static site generator, nodejs, javascript, webpack, browsersync"
+        }
+
+<br>
+site.json supplies metadata shared by pages in your project. Edit scripts/utils/config.js if you want to customize how this data is handled.
 
 ## app.js, app.scss
 
@@ -115,3 +143,25 @@ app.scss
 You can safely rename ***app.js** and **app.scss** to something more suitable for your project, however, it is not recommended removing these files entirely.
 
 You can create **additional** files without underscores to signify assets you want imported separately from your main entry points. [Click here](/bowman/faq) to read more.
+
+## critical.scss
+
+        src/
+            static/
+                scss/
+                    critical.scss
+
+<br>
+critical.scss contains scss imports you want inlined for quicker rendering. This file is injected into layouts/head.ejs via prod builds.
+
+## ignore.js
+
+       dist/
+       scripts/
+       src/
+       ignore.js
+
+<br>
+Bowman uses a webpack prebuild script to generate a manifest file containing site assets before static assets are compiled in the main webpack configuration. This is useful for situation where you want to reference the manifest file in your js scripts.
+
+Because webpack mandates an entrypoint, a placeholder file (ignore.js) is used in the webpack prebuild script. More information can be found in ignore.js.

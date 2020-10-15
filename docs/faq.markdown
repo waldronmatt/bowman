@@ -22,22 +22,31 @@ permalink: /faq
                     ...
             static/
                 ejs/
+                    layouts/
+                        foot.ejs
+                        footer.ejs
+                        head.ejs
+                        header.ejs
                     templates/
                         default.ejs
+                    favicons.ejs
                 js/
                     app.js
                 json/
                     site.json
                 scss/
                     app.scss
+                    critical.scss
         .babelrc
+        .editorconfig
         .eslintignore
         .eslintrc
+        .prettierrc.json
         .stylelintignore
         .stylelintrc.json
         ignore.js
+        logo.png
         package.json
-        package-lock.json
                 
 ## How do I set up additional entry points?
 
