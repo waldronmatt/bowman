@@ -64,9 +64,9 @@ To set up additional entry points, simply create a new js/scss file **without an
 
 To reference the entry points, use the staticManifest ejs variable in your markup. This variable will reference the manifest file with your script mappings:
 
-            <link rel="stylesheet" href="<%= site.staticManifest[`static/css/folder/another-folder/my-custom-code.css`] %>">
+        <link rel="stylesheet" href="<%= site.staticManifest[`static/css/folder/another-folder/my-custom-code.css`] %>">
 
-            <script src="<%= site.staticManifest[`static/js/some-directory/my-custom-code.js`] %>"></script>
+        <script src="<%= site.staticManifest[`static/js/some-directory/my-custom-code.js`] %>"></script>
 
 
 ## How do I customize Bowman's default build structure?
@@ -106,7 +106,7 @@ A basic example:
 
 ### index.json
 
-Bowman uses a manifest file to map images to take advantage of Webpack's contenthash feature that prevents caching.
+Bowman uses a manifest file to map images to take advantage of Webpack's contenthash cache busting feature.
 
         <% data.pictures.forEach((el) => { %>
             <img src="<%= site.assetsManifest[`static/images/${el.picture}`] %>">

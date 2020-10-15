@@ -1,6 +1,6 @@
 ---
 layout: default
-title: JS Structure
+title: Script Structure
 nav_order: 1
 parent: Site Structure
 permalink: /site-structure/script-structure
@@ -16,7 +16,7 @@ permalink: /site-structure/script-structure
 
 **app.js** - js entrypoint for your site
 
-# SCSS Structure
+# SASS Structure
 
 Bowman's default scss structure is based on Hugo Giraudel's SCSS 7-1 architecture pattern. [Click here](https://sass-guidelin.es/#architecture) to learn more.
 

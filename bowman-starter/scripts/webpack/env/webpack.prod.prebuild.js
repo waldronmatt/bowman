@@ -12,9 +12,9 @@ module.exports = merge(common, {
       { from:'src/static/img/', to:'static/img/[path][name].[contenthash:8].[ext]', },
     ]),
     // compress images (might take a while if there's a lot)
-    new ImageminPlugin({ test: /\.(jpe?g|png|gif|svg)$/i }),
-    new ImageminWebpWebpackPlugin(),
-    // generate optimized favicons for different devices
-    new FaviconsWebpackPlugin(),
+    // new ImageminPlugin({ test: /\.(jpe?g|png|gif|svg)$/i }),
+    // new ImageminWebpWebpackPlugin(),
+    // // generate optimized favicons for different devices
+    // new FaviconsWebpackPlugin(),
   ],
 });
