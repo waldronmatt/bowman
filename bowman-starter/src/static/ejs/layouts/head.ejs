@@ -8,7 +8,7 @@
 
 <!-- https://favicon.io/favicon-generator/?t=b&ff=Tajawal&fs=110&fc=%23FFFFFF&b=rounded&bc=%23333a56 -->
 <!-- Using the best quality favicon to feed into favicon webpack plugin: android-chrome-512x512 -->
-<%- include('./favicons') %>
+<%- site.faviconRefs %>
 
 <!--
   Without crossorigin, the preloaded font is ignored by the browser, and a new fetch takes place.
@@ -18,7 +18,7 @@
   https://web.dev/preload-optional-fonts/
   https://www.freecodecamp.org/news/web-fonts-in-2018-f191a48367e8/
 -->
-<link rel="preload" as="font" href="<%= site.basePath %>static/fonts/tajawal-v3-latin-regular.woff2" type="font/woff2" crossorigin>
+<link rel="preload" as="font" href="static/fonts/tajawal-v3-latin-regular.woff2" type="font/woff2" crossorigin>
 
 <!--
   Inject minified critical css
@@ -44,5 +44,5 @@
   Other methods
   https://stackoverflow.com/questions/32759272/how-to-load-css-asynchronously
 -->
-<link crossorigin rel="preload" href="<%= site.basePath %><%= site.global_css %>" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="<%= site.basePath %><%= site.global_css %>"></noscript>
+<link crossorigin rel="preload" href="<%= site.global_css %>" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="<%= site.global_css %>"></noscript>

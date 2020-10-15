@@ -15,15 +15,15 @@ const sharedModule = () => {
     "background: lightgreen; color: black; display: block;"
   );
   console.log(
-    "%c common.js",
+    "%c commons.js",
     "background: lightblue; color: black; display: block;"
   );
   console.log(
-    "%c This works if you see this twice.",
+    "%c This works if you see this once from commons.js via prod build.",
     "background: yellow; color: black; display: block;"
   );
   console.log(
-    "Webpack will generate a common.js file because this module is shared by multiple entrypoints (chuncks)."
+    "Webpack will generate a commons.js file because this module is shared by multiple entrypoints (chuncks)."
   );
 };
 

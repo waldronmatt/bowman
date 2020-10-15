@@ -12,7 +12,7 @@ const requireUncached = require('./utils/require-uncached');
 const ps = require('./utils/paths');
 const staticManifest = require('../dist/static-manifest.json');
 
-const buildMarkup = (file, basePath, criticalStyles) => {
+const buildMarkup = (file, basePath, criticalStyles, faviconRefs) => {
   const getFile = path.parse(file);
   const getExtentionJSON = file.replace(/\.ejs$/g, '.json');
 
@@ -35,7 +35,7 @@ const buildMarkup = (file, basePath, criticalStyles) => {
   // render page
   const pageContent = frontMatter(content);
   const templateConfig = Object.assign({},
-    config(basePath, data, page_css, page_js, criticalStyles), {
+    config(basePath, data, page_css, page_js, criticalStyles, faviconRefs), {
       page: pageContent.attributes
     },
   );

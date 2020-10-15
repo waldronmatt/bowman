@@ -29,7 +29,7 @@ const calledFunction = () => {
     "background: lightblue; color: black; display: block;"
   );
   console.log(
-    "%c This works if you don't see 'treeShakenFunction()' in minified app.js.",
+    "%c This works if you don't see 'treeShakenFunction()' in minified app.js via prod build.",
     "background: yellow; color: black; display: block;"
   );
   console.log(

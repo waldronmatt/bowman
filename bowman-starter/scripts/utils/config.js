@@ -5,7 +5,7 @@ const assetsManifest = require('../../dist/assets-manifest.json');
 const staticManifest = require('../../dist/static-manifest.json');
 
 
-const config = (basePath, data, page_css, page_js, criticalStyles) => {
+const config = (basePath, data, page_css, page_js, criticalStyles, faviconRefs) => {
   // eslint-disable-next-line no-undef
   return site = {
     basePath: basePath,
@@ -13,6 +13,8 @@ const config = (basePath, data, page_css, page_js, criticalStyles) => {
     description: siteData.description,
     keywords: siteData.keywords,
     criticalStyles: criticalStyles,
+    faviconRefs: faviconRefs,
+    // inject paths for webpack splitchunck bundles
     vendors_js: staticManifest['vendors.js'],
     commons: staticManifest['commons.js'],
     global_css: staticManifest[ps.global_css],
