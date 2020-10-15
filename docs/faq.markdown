@@ -22,24 +22,33 @@ permalink: /faq
                     ...
             static/
                 ejs/
+                    layouts/
+                        foot.ejs
+                        footer.ejs
+                        head.ejs
+                        header.ejs
                     templates/
                         default.ejs
+                    favicons.ejs
                 js/
                     app.js
                 json/
                     site.json
                 scss/
                     app.scss
+                    critical.scss
         .babelrc
+        .editorconfig
         .eslintignore
         .eslintrc
+        .prettierrc.json
         .stylelintignore
         .stylelintrc.json
         ignore.js
+        logo.png
         package.json
-        package-lock.json
                 
-## How do I set up additional entry points?
+## How do I set up additional entry points and reference them in my page?
 
 To set up additional entry points, simply create a new js/scss file **without an underscore preceding** the filename. Bowman will recursively look for these files and feed into webpack, so the directory structure is completely up to you:
 
@@ -53,7 +62,29 @@ To set up additional entry points, simply create a new js/scss file **without an
                         another-folder/
                             my-custom-code.scss
 
-Creating custom entry points can be useful in several situations. For example, you might want to keep vendor code used on a few pages separate from your main bundle. Or you might want to do the same for pages with custom code.
+To reference the entry points, use the staticManifest ejs variable in your markup. This variable will reference the manifest file with your script mappings:
+
+            <link rel="stylesheet" href="<%= site.staticManifest[`static/css/folder/another-folder/my-custom-code.css`] %>">
+
+            <script src="<%= site.staticManifest[`static/js/some-directory/my-custom-code.js`] %>"></script>
+
+
+## How do I customize Bowman's default build structure?
+
+Customize your build directories via scripts/utils/paths.js
+
+            const paths = {
+                pagesPath: 'build/content/',
+                dataPath: 'build/data/',
+                sharedDataPath: 'static/json/',
+                templatePath: 'static/ejs/templates/'
+            }
+
+            module.exports = paths;
+
+## How do I customize global ejs variables?
+
+Customize global ejs variables via scripts/utils/config.js
 
 ## How do I reference images in my project?
 

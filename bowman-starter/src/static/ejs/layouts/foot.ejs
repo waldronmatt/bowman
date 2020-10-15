@@ -19,7 +19,7 @@
     var pageStylesheet = document.createElement("link");
     pageStylesheet.rel = "stylesheet";
     pageStylesheet.type = "text/css";
-    pageStylesheet.href = "<%= site.basePath %><%= site.global_css %>";
+    pageStylesheet.href = "<%= site.global_css %>";
     document.head.appendChild(pageStylesheet);
   }
 </script>
@@ -31,6 +31,6 @@
   Async - for independent scripts that can be executed in any order.
   This script doesn't wait for other scripts and can loaded in parallel with other async scripts.
 -->
-<script async src="<%= site.basePath %><%= site.global_js %>"></script>
-<script async src="<%= site.basePath %><%= site.vendors_js %>"></script>
-<script async src="<%= site.basePath %><%= site.commons %>"></script>
+<script async src="<%= site.global_js %>"></script>
+<script async src="<%= site.commons %>"></script>
+<script async src="<%= site.vendors_js %>"></script>

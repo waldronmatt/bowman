@@ -1,4 +1,4 @@
-{ 
+{
   "header": {
     "title": "Bowman",
     "image": {
@@ -8,7 +8,7 @@
       "fallback": [
         {
           "ext": "webp"
-        }, 
+        },
         {
           "ext": "png"
         }

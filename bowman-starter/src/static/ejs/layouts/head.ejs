@@ -7,35 +7,33 @@
 <base href="<%= site.basePath %>">
 
 <!-- https://favicon.io/favicon-generator/?t=b&ff=Tajawal&fs=110&fc=%23FFFFFF&b=rounded&bc=%23333a56 -->
-<link rel="apple-touch-icon" sizes="180x180" href="<%= site.basePath %>apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="<%= site.basePath %>favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="<%= site.basePath %>favicon-16x16.png">
-<link rel="manifest" href="<%= site.basePath %>site.webmanifest">
+<!-- Using the best quality favicon to feed into favicon webpack plugin: android-chrome-512x512 -->
+<%- site.faviconRefs %>
 
 <!--
-  Without crossorigin, the preloaded font is ignored by the browser, and a new fetch takes place. 
-  This is because fonts are expected to be fetched anonymously by the browser, 
+  Without crossorigin, the preloaded font is ignored by the browser, and a new fetch takes place.
+  This is because fonts are expected to be fetched anonymously by the browser,
   and the preload request is only made anonymous by using the this attribute
 
   https://web.dev/preload-optional-fonts/
   https://www.freecodecamp.org/news/web-fonts-in-2018-f191a48367e8/
 -->
-<link rel="preload" as="font" href="<%= site.basePath %>static/fonts/tajawal-v3-latin-regular.woff2" type="font/woff2" crossorigin>
+<link rel="preload" as="font" href="static/fonts/tajawal-v3-latin-regular.woff2" type="font/woff2" crossorigin>
 
-<!-- 
+<!--
   Inject minified critical css
   https://jonassebastianohlsson.com/criticalpathcssgenerator/#what-is
 
   Why don't we just put the criticalStyles var inside style tags directly?
     1) Stylelint keeps throwing errors despite stylintignore configuration
     2) Our node minifier can't understand css independently so it will strip out criticalStyles upon minification
-  
+
   Security shouldn't be an issue since we are injecting our own data
   https://developer.mozilla.org/en-US/docs/Web/API/Element/insertAdjacentHTML
 -->
 <script>document.head.insertAdjacentHTML("beforeend", `<style><%- site.criticalStyles %></style>`)</script>
 
-<!-- 
+<!--
   Handle non-critical css
 
   link rel="preload" as="style" loads the CSS file in a non-render-blocking way.
@@ -46,5 +44,5 @@
   Other methods
   https://stackoverflow.com/questions/32759272/how-to-load-css-asynchronously
 -->
-<link crossorigin rel="preload" href="<%= site.basePath %><%= site.global_css %>" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="<%= site.basePath %><%= site.global_css %>"></noscript>
+<link crossorigin rel="preload" href="<%= site.global_css %>" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="<%= site.global_css %>"></noscript>

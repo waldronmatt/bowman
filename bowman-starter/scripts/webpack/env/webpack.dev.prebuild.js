@@ -13,7 +13,7 @@ module.exports = merge(common, {
     */
     new HardSourceWebpackPlugin(),
     new CopyWebpackPlugin([
-      { from:'./src/static/images/', to:'static/images/', },
+      { from:'./src/static/img/', to:'static/img/', },
     ]),
   ],
 });

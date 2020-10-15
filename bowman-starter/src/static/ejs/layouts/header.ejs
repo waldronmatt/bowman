@@ -1,11 +1,11 @@
 <% let image = sharedData.header.image; %>
-<% let manifestHasNextGenImage = site.assetsManifest[`static/images/${image.name}.webp`]; %>
+<% let manifestHasNextGenImage = site.assetsManifest[`static/img/${image.name}.webp`]; %>
 
 <header>
   <h1><%= sharedData.header.title %></h1>
   <a href="<%= site.basePath %>">
     <picture>
-        <!-- 
+        <!--
           Generate image fallback support for prod builds
           For dev builds, simply output the img tag so we don't have broken images
 
@@ -21,10 +21,10 @@
         -->
       <% image.fallback.forEach((el) => { %>
         <% if (manifestHasNextGenImage) { %>
-          <source srcset="<%= site.basePath %><%= site.assetsManifest[`static/images/${image.name}.${el.ext}`] %>" type="image/<%= el.ext %>">
+          <source srcset="<%= site.assetsManifest[`static/img/${image.name}.${el.ext}`] %>" type="image/<%= el.ext %>">
         <% } %>
       <% }) %>
-      <img src="<%= site.basePath %><%= site.assetsManifest[`static/images/${image.fullname}`] %>" alt="<%= image.alt %>">
+      <img src="<%= site.assetsManifest[`static/img/${image.fullname}`] %>" alt="<%= image.alt %>">
     </picture>
   </a>
 </header>

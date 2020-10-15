@@ -38,7 +38,11 @@ module.exports = merge(common, {
       new OptimizeCSSAssetsPlugin({
         // remove comments
         cssProcessorPluginOptions: {
-          preset: ['default', { discardComments: { removeAll: true } }],
+          preset: ['default', {
+            discardComments: {
+              removeAll: true,
+            }
+          }],
         },
       }),
     ],

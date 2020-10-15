@@ -15,6 +15,8 @@ permalink: /site-structure/ejs-structure
                     layouts/
                     partials/
                     templates/
+                        default.ejs
+                    favicons.ejs
 
 **components** - markup that can be reused on your site
 
@@ -23,6 +25,10 @@ permalink: /site-structure/ejs-structure
 **partials** - group related components together via multiple ejs includes. Useful for blog posts, articles, etc.
 
 **templates** - ejs calls to the main parts of your site (head, header, navigation, footer)
+
+**default.ejs** - fallback page template
+
+**favicons.ejs** - stores references to generated favicons
 
             
             

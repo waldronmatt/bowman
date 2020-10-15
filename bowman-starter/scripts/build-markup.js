@@ -10,32 +10,28 @@ const frontMatter = require('front-matter');
 const config = require('./utils/config');
 const requireUncached = require('./utils/require-uncached');
 const ps = require('./utils/paths');
-const staticManifest = require('../dist/static-manifest.json');
 
-const buildMarkup = (file, basePath, criticalStyles) => {
+const buildMarkup = (file, criticalStyles, faviconRefs) => {
   const getFile = path.parse(file);
   const getExtentionJSON = file.replace(/\.ejs$/g, '.json');
 
   // get page data
   let data;
-  try { 
+  try {
+    // if we don't uncache, the markup will keep stale json data for hot-reloads
     data = requireUncached(`../../src/${ps.dataPath}${getExtentionJSON}`);
     console.log(`getting json data at: src/${ps.dataPath}${getExtentionJSON}`);
-  } catch (error) { 
+  } catch (error) {
     throw Error('unable to render json data');
   }
-
-  // get page specific css, js paths
-  const page_css = staticManifest[`${ps.stylePath}${getFile.name}/${getFile.name}.css`];
-  const page_js = staticManifest[`${ps.scriptPath}${getFile.name}/${getFile.name}.js`];
 
   // read page file
   const content = fse.readFileSync(`./src/${ps.pagesPath}${file}`, 'utf-8');
 
   // render page
   const pageContent = frontMatter(content);
-  const templateConfig = Object.assign({}, 
-    config(basePath, data, page_css, page_js, criticalStyles), {
+  const templateConfig = Object.assign({},
+    config(data, criticalStyles, faviconRefs), {
       page: pageContent.attributes
     },
   );

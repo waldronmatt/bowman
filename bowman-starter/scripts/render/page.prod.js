@@ -6,21 +6,19 @@ const htmlMinifier = require('@node-minify/html-minifier');
 const buildMarkup = require('../build-markup');
 const ps = require('../utils/paths');
 
-// set env
-const basePath = '/';
-
 // read pages
 const files = glob.sync('**/*.@(ejs)', { cwd: `./src/${ps.pagesPath}` });
 
-// inject critical css for prod builds
+// inject critical css and favicons for prod builds
 const staticManifest = require('../../dist/static-manifest.json');
 const criticalStyles = fse.readFileSync(`dist/${staticManifest['static/css/critical.css']}`, 'utf8');
+const faviconRefs = fse.readFileSync('src/static/ejs/favicons.ejs', 'utf8');
 
 console.time('generated all project pages in');
 
 files.forEach((file) => {
   console.time('page generated in');
-  buildMarkup(file, basePath, criticalStyles);
+  buildMarkup(file, criticalStyles, faviconRefs);
   const getFile = path.parse(file);
   const destPath = path.join('./dist', getFile.dir);
 

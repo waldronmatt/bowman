@@ -3,9 +3,6 @@ const buildMarkup = require('./build-markup');
 
 // executing page build when watching for page changes
 
-// set env
-const basePath = '/';
-
 const cleanPathBuildMarkup = (file) => {
   const { dir, base } = path.parse(file);
 
@@ -33,7 +30,7 @@ const cleanPathBuildMarkup = (file) => {
 
   const returnPageUpdates = async () => {
     try {
-      await updatePage(newFile, basePath);
+      await updatePage(newFile);
       console.timeEnd(`page ${newFile} generated in`);
     } catch (error) {
       throw Error(error);

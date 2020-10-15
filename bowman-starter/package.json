@@ -4,7 +4,7 @@
   "description": "A simple static site generator powered by Node.js, Webpack, and Browsersync",
   "main": "src/index.js",
   "scripts": {
-    "dev": "run-s webpack-prebuild-dev webpack-dev render-page-dev browsersync",
+    "dev": "run-s webpack-prebuild-dev webpack-dev render-page-dev serve",
     "build": "run-s webpack-prebuild-prod webpack-prod render-page-prod",
     "rebuild": "run-s webpack-prebuild-dev webpack-dev render-page-dev",
     "webpack-prebuild-dev": "webpack --config ./scripts/webpack/env/webpack.dev.prebuild.js",
@@ -13,7 +13,7 @@
     "webpack-prod": "webpack --config ./scripts/webpack/env/webpack.prod.js",
     "render-page-dev": "node ./scripts/render/page.dev.js",
     "render-page-prod": "node ./scripts/render/page.prod.js",
-    "browsersync": "node ./scripts/browsersync"
+    "serve": "node ./scripts/browsersync"
   },
   "keywords": [
     "bowman",
@@ -35,12 +35,7 @@
     "iOS 7",
     "last 3 iOS versions"
   ],
-  "sideEffects": [
-    "./src/static/js/_load-apps.js",
-    "./src/static/js/_polyfills.js",
-    "./src/static/js/layouts/utils/_copyright-year.js",
-    "./src/static/js/layouts/_footer.js"
-  ],
+  "sideEffects": false,
   "author": "Matthew Waldron",
   "license": "MIT",
   "devDependencies": {
@@ -62,6 +57,7 @@
     "eslint-loader": "^4.0.2",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-prettier": "^3.1.4",
+    "favicons-webpack-plugin": "^4.2.0",
     "front-matter": "^3.1.0",
     "fs-extra": "^9.0.0",
     "hard-source-webpack-plugin": "^0.13.1",
@@ -69,7 +65,6 @@
     "imagemin-webpack-plugin": "^2.4.2",
     "mini-css-extract-plugin": "^0.9.0",
     "node-sass": "^4.14.0",
-    "npm": "^6.14.5",
     "npm-run-all": "^4.1.5",
     "optimize-css-assets-webpack-plugin": "^5.0.3",
     "postcss-loader": "^3.0.0",
@@ -80,7 +75,6 @@
     "stylelint-config-standard": "^20.0.0",
     "stylelint-scss": "^3.17.2",
     "stylelint-webpack-plugin": "^2.0.0",
-    "stylint": "^2.0.0",
     "terser-webpack-plugin": "^3.0.0",
     "webpack": "^4.43.0",
     "webpack-clean": "^1.2.5",
@@ -94,7 +88,6 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
-    "regenerator-runtime": "^0.13.7",
     "sanitize.css": "^12.0.1"
   }
 }

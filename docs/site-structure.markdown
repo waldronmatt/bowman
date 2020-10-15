@@ -45,15 +45,9 @@ permalink: /site-structure/
             
         src/
             static/
-                docs/
                 ejs/
-                favicons/
                 fonts/
-                images/
+                img/
                 js/
                 json/
                 scss/
-            favicon
-
-            
-            

@@ -49,10 +49,6 @@ footer,
 
 img {
   margin-bottom: $default-margin;
-  max-width: 75%;
+  max-width: 50%;
   height: auto;
-
-  @include lg {
-    max-width: 40%;
-  }
 }

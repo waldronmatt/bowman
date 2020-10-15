@@ -1,10 +1,20 @@
 ---
 layout: default
-title: SCSS Structure
+title: JS Structure
 nav_order: 1
 parent: Site Structure
-permalink: /site-structure/scss-structure
+permalink: /site-structure/script-structure
 ---
+
+# JS Structure
+
+        src/
+            static/
+                js/
+                    .../
+                    app.js
+
+**app.js** - js entrypoint for your site
 
 # SCSS Structure
 
@@ -13,12 +23,7 @@ Bowman's default scss structure is based on Hugo Giraudel's SCSS 7-1 architectur
         src/
             static/
                 scss/
-                    abstracts/
-                    base/
-                    components/
-                    layouts/
-                    pages/
-                    vendors/
+                    .../
                     app.scss
                     critical.scss
 
