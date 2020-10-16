@@ -18,7 +18,7 @@ permalink: /site-structure/script-structure
 
 # SASS Structure
 
-Bowman's default scss structure is based on Hugo Giraudel's SCSS 7-1 architecture pattern. [Click here](https://sass-guidelin.es/#architecture) to learn more.
+Bowman's default scss structure is based on Hugo Giraudel's SASS 7-1 architecture pattern. [Click here](https://sass-guidelin.es/#architecture) to learn more.
 
         src/
             static/

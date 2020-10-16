@@ -41,9 +41,7 @@ default.ejs
 
             <%- body %>
 
-            <footer>
-                <%- include('../layouts/footer') %>
-            </footer>
+            <%- include('../layouts/footer') %>
 
             <%- include('../layouts/foot') %>
         </body>

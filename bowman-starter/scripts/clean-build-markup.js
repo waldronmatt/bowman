@@ -5,7 +5,6 @@ const buildMarkup = require('./build-markup');
 
 const cleanPathBuildMarkup = (file) => {
   const { dir, base } = path.parse(file);
-
   let getRelativeDir = dir.replace(/(src\/build\/content|src\/build\/data)/g, '');
 
   // if json changed, get the corresponding page file
@@ -15,15 +14,16 @@ const cleanPathBuildMarkup = (file) => {
   if (getRelativeDir === '') {
     newFile = newFile.replace(/\//g, '');
   }
+
   if (getRelativeDir[0] === '/') {
     newFile = `${getRelativeDir.replace(/^\//g, '')}/${baseName}`;
   }
 
-  const updatePage = (newFile, basePath) => {
+  const updatePage = (newFile) => {
     return new Promise((resolve, reject) => {
       console.time(`page ${newFile} generated in`);
 
-      resolve(buildMarkup(newFile, basePath));
+      resolve(buildMarkup(newFile));
       reject(`unable to process ${newFile}`);
     });
   };

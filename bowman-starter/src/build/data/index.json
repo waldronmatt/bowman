@@ -15,13 +15,13 @@
         "list": "Use core front-end languages and JavaScript-like technologies to build your site."
       },
       {
-        "list": "Utilize a complete workflow of industry-leading software (Webpack, Browsersync, Autoprefixer, Babel, Eslint, Stylelint, and more)"
+        "list": "Utilize a complete workflow of industry-leading software (Webpack, Browsersync, Autoprefixer, Babel, and more)"
       },
       {
         "list": "Includes pre-configured Webpack scripts implementing the latest optimizations (open the console to test!)"
       },
       {
-        "list": "Start developing using Bowman's 100% Lighthouse Score template"
+        "list": "Start developing using Bowman's ~100% Lighthouse Score template"
       }
     ]
   }

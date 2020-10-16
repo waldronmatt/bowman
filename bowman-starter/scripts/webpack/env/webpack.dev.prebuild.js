@@ -8,7 +8,6 @@ module.exports = merge(common, {
   plugins: [
     /*
       Provides an intermediate caching step for modules
-
       Not using on prod builds because Netlify stalls out a while
     */
     new HardSourceWebpackPlugin(),

@@ -95,7 +95,7 @@ Bowman comes with a default template with the following features:
 - Popular css reset and normalizing libraries
 - Suggested folder structure for an organized project
 
-## Useage
+## Usage
 
 ### Create the markup
 

@@ -10,10 +10,11 @@ nav_order: 1
 
 ## Features
 
-- Recursively generates page markup
-- Recursively finds and outputs entry points
-- Hot reloading of pages and assets
-- Asset bundling, cache prevention, and code splitting support
+- A simple-to-use JavaScript-based static site generator with hot-reloading
+- Use core front-end languages and JavaScript-like technologies to build your site.
+- Utilize a complete workflow of industry-leading software (Webpack, Browsersync, Autoprefixer, Babel, and more)
+- Includes pre-configured Webpack scripts implementing the latest optimizations
+- Start developing using Bowman's ~100% Lighthouse Score template
 
 ## Installation
 

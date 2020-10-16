@@ -6,7 +6,7 @@ const displayToConsole = () => {
     "background: lightgreen; color: black; display: block;"
   );
   console.log(
-    "%c Dynamic Imports",
+    "%c Dynamic Loading",
     "background: lightblue; color: black; display: block;"
   );
   console.log(

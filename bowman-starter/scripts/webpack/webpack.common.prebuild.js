@@ -4,11 +4,8 @@ const ManifestPlugin = require('webpack-manifest-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 /*
-  We have a prebuild script so we can
-  use assets (images, etc.) for use in javascript files.
-
-  We must create a manifest
-  before webpack grabs js files in webpack.common
+  We have a prebuild script so we can use assets (images, etc.) for use in javascript files.
+  We must create a manifest before webpack grabs js files in webpack.common
 
   More information can be found in ignore.js
 */
