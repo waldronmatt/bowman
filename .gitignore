@@ -91,3 +91,6 @@ bowman-starter/dist
 # docs
 docs/.bundle
 docs/vendor
+
+# folder color on linux
+.directory
