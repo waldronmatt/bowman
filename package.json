@@ -1,6 +1,6 @@
 {
   "name": "@waldronmatt/bowman",
-  "version": "1.9.14",
+  "version": "1.9.21",
   "description": "A simple static site generator powered by Node.js, Webpack, and Browsersync",
   "repository": {
     "type": "git",
