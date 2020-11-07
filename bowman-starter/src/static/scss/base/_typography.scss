@@ -19,9 +19,9 @@ li {
 
 // basic styling for links
 a {
+  background-color: #f5f5dc;
   color: $light-blue;
   font-weight: bold;
-  background-color: beige;
 
   @include on-event {
     color: $dark-blue;
@@ -48,7 +48,7 @@ footer,
 }
 
 img {
+  height: auto;
   margin-bottom: $default-margin;
   max-width: 50%;
-  height: auto;
 }

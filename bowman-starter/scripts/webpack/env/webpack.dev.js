@@ -3,6 +3,7 @@ const merge = require('webpack-merge');
 const common = require('../webpack.common.js');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const StylelintPlugin = require('stylelint-webpack-plugin');
+const ESLintPlugin = require('eslint-webpack-plugin');
 const LiveReloadPlugin = require('webpack-livereload-plugin');
 const HardSourceWebpackPlugin = require('hard-source-webpack-plugin');
 
@@ -22,17 +23,6 @@ module.exports = merge(common, {
     // specify chunck path for code splitted files
     chunkFilename: 'static/js/[name].js',
   },
-  module: {
-    rules: [
-      // linting js files before babel transpiling
-      {
-        enforce: 'pre',
-        test: /\.js$/,
-        exclude: /node_modules/,
-        loader: 'eslint-loader',
-      },
-    ],
-  },
   plugins: [
     /*
       Provides an intermediate caching step for modules
@@ -51,10 +41,8 @@ module.exports = merge(common, {
     new LiveReloadPlugin({
       appendScriptTag: true,
     }),
-    // linting the sass files
-    new StylelintPlugin({
-      files: 'src/static/scss/**/*.scss',
-    }),
+    new StylelintPlugin(),
+    new ESLintPlugin(),
     // where the compiled scss is saved to
     new MiniCssExtractPlugin({
       filename: '[name].css',
