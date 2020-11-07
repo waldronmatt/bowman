@@ -3,15 +3,14 @@
   https://google-webfonts-helper.herokuapp.com/fonts/tajawal?subsets=latin
 */
 @font-face {
-  font-family: 'Tajawal';
-  font-style: normal;
-  font-weight: 400;
-
   /*
     Google recommends font-display: optional
     https://web.dev/preload-optional-fonts/
   */
   font-display: optional;
+  font-family: 'Tajawal';
+  font-style: normal;
+  font-weight: 400;
   src: url('/static/fonts/tajawal-v3-latin-regular.eot'); // IE9 Compat Modes
   src:
     // local() function allows users to use their local copy of the font if present
