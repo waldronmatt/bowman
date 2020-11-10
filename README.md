@@ -44,20 +44,13 @@ Use core front-end languages and JavaScript-like technologies to build your site
 ## Workflow
 Utilize a complete workflow of industry-leading software:
 - Webpack: module bundler
-    - webpack-livereload-plugin: trigger reloads from webpack's build pipeline while serving assets using Browsersync
-    - webpack-hot-middleware: add hot-reloading capabilities to Browsersync
-    - webpack-dev-middleware: extend BrowserSync's server abilities to support hot-reloading of page assets
 - Browsersync: Development server for serving assets
 - Autoprefixer: Automatically add vendor prefixes to styles
 - Babel: Transpile to different versions of EcmaScript
 - Browserlist: Configure which browsers will be supported
 - Prettier: Formatter for scripts and styles
 - ESLint: Linting for scripts
-    - eslint-config-airbnb-base: a popular eslint ruleset
-    - eslint-plugin-prettier: turns off unnecessary or conflicting eslint rules with prettier
 - StyleLint: Linting for styles
-    - stylelint-config-standard: a popular stylint ruleset
-    - stylelint-config-prettier: turns off unnecessary or conflicting stylelint rules with prettier
 - EditorConfig: general file formatter for your editor/IDE
 
 ## Features
@@ -80,18 +73,12 @@ Bowman comes with a default template with the following features:
 - ~100% Lighthouse Score on Mobile and Desktop (Excluding PWA)
 - Contains popular, pre-configured webpack optimizations with examples:
     - cache busting using [contenthash]
-    - code splitting:
-        - dynamic loading
-        - lazy loading
-        - prefetch
-    - splitchuncks integration:
-        - vendors.js (npm dependencies)
-        - commons.js (shared code)
-    - tree-shaking (dead-code elimination) support via prod builds
+    - code splitting
+    - tree-shaking
 - Polyfill support
 - Eliminates render blocking js/css
 - Next-gen image and fallback support for production builds
-- Critical css and favicon generation support
+- Critical css and favicon generation
 - Popular css reset and normalizing libraries
 - Suggested folder structure for an organized project
 
@@ -134,10 +121,8 @@ my-page.json
 Bowman has several caveats/unsupported features:
 - file/folder structures must match for page data and markup
     - the decision was made to keep both build/content/ and build/data/ the same structure in order to easily automate variable page generation
-- webpackPreload magic comment not supported
-    - needs webpack html plugin to work
-- font file loading - since we're replying on sass to import, we have to use webpack copy plugin during the build
-    - cannot support font cache-busting
+- webpack prefetch and preload needs webpack html-webpack-plugin to work
+- font file cache-busting not supported
 
 ## Contributing
 
