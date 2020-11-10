@@ -9,11 +9,6 @@ import sharedModule from "./examples/_splitchuncks-common";
 import loadApps from "./examples/_dynamic-load";
 import lazyLoadComponent from "./examples/_lazy-load";
 
-// see examples/prefetch.js for more info
-import(
-  /* webpackPrefetch: true */ /* webpackChunkName: '_prefetch-print' */ "./examples/_prefetch-print"
-);
-
 footer();
 
 polyfillAndVendorTest();
