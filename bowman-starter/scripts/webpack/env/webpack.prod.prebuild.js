@@ -15,6 +15,9 @@ module.exports = merge(common, {
     new ImageminPlugin({ test: /\.(jpe?g|png|gif|svg)$/i }),
     new ImageminWebpWebpackPlugin(),
     // generate optimized favicons for different devices (might take a while)
-    new FaviconsWebpackPlugin(),
+    new FaviconsWebpackPlugin({
+      // remove mode to enable default 'webapp' for comprehensive favicon generation
+      mode: 'light',
+    }),
   ],
 });
