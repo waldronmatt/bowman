@@ -1,6 +1,6 @@
 {
   "name": "@waldronmatt/bowman",
-  "version": "1.9.24",
+  "version": "1.9.25",
   "description": "A simple static site generator powered by Node.js, Webpack, and Browsersync",
   "repository": {
     "type": "git",
@@ -9,7 +9,6 @@
   "homepage": "https://bowman.netlify.app",
   "main": "src/index.js",
   "bin": {
-    "@waldronmatt/create-bowman-starter": "bin/create-bowman-starter",
     "create-bowman-starter": "bin/create-bowman-starter"
   },
   "publishConfig": {
