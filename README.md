@@ -19,7 +19,8 @@ Install globally:
 Create project:
 
        create-bowman-starter -y
-        
+
+
 Install dependencies:
 
         npm install
@@ -35,14 +36,18 @@ Build and serve for production:
         npm run build
 
 ## Languages
+
 Use core front-end languages and JavaScript-like technologies to build your site.
+
 - Next-Gen JavaScript
 - Sass
 - EJS - generate HTML markup with plain JavaScript
 - JSON - store page text/data
 
 ## Workflow
+
 Utilize a complete workflow of industry-leading software:
+
 - Webpack: module bundler
 - Browsersync: Development server for serving assets
 - Autoprefixer: Automatically add vendor prefixes to styles
@@ -54,27 +59,31 @@ Utilize a complete workflow of industry-leading software:
 - EditorConfig: general file formatter for your editor/IDE
 
 ## Features
+
 Take advantage of Bowman's build scripts with performance and best practices built in:
+
 - Bowman
-    - Recursively find, generate, and minify html markup
-    - JSON cache prevention and file watch debouncing for robust page hot-reloading
+  - Recursively find, generate, and minify html markup
+  - JSON cache prevention and file watch debouncing for robust page hot-reloading
 - Webpack
-    - Recursively find and output entry points
-    - Transpile Next-Gen JavaScript using Babel
-    - Compile Sass using Webpack loaders
-    - Manifest generation for assets so you can reference in your markup
-    - Minify js and css
-    - Compress images and generate next-gen image formats
+  - Recursively find and output entry points
+  - Transpile Next-Gen JavaScript using Babel
+  - Compile Sass using Webpack loaders
+  - Manifest generation for assets so you can reference in your markup
+  - Minify js and css
+  - Compress images and generate next-gen image formats
 - Browsersync
-    - Serve pages and assets for development
+  - Serve pages and assets for development
 
 ## Bowman Starter Template
+
 Bowman comes with a default template with the following features:
+
 - ~100% Lighthouse Score on Mobile and Desktop (Excluding PWA)
 - Contains popular, pre-configured webpack optimizations with examples:
-    - cache busting using [contenthash]
-    - code splitting
-    - tree-shaking
+  - cache busting using [contenthash]
+  - code splitting
+  - tree-shaking
 - Polyfill support
 - Eliminates render blocking js/css
 - Next-gen image and fallback support for production builds
@@ -115,12 +124,15 @@ my-page.json
         }
 
 ## Documentation
-[Read the full documentation](https://waldronmatt.github.io/bowman/)
+
+[Read the full documentation](https://github.com/waldronmatt/bowman/tree/master/docs)
 
 ## Limitations
+
 Bowman has several caveats/unsupported features:
+
 - file/folder structures must match for page data and markup
-    - the decision was made to keep both build/content/ and build/data/ the same structure in order to easily automate variable page generation
+  - the decision was made to keep both build/content/ and build/data/ the same structure in order to easily automate variable page generation
 - webpack prefetch and preload needs webpack html-webpack-plugin to work
 - font file cache-busting not supported
 
