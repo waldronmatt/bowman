@@ -5,7 +5,7 @@
     "description": "A simple static site generator with an integrated toolchain for efficient development and delivery.",
     "link": {
       "text": "Click here to read the documentation.",
-      "href": "https://waldronmatt.github.io/bowman/"
+      "href": "https://github.com/waldronmatt/bowman/tree/master/docs"
     },
     "features": [
       {
