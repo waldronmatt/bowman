@@ -1,9 +1,3 @@
----
-layout: default
-title: Layouts
-nav_order: 6
----
-
 # Layouts
 
 Layouts contain shared html markup for the main parts of your site (head, header, navigation, footer).

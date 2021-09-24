@@ -1,17 +1,12 @@
----
-layout: default
-title: Creating Pages
-nav_order: 3
----
-
 # Creating New Pages
 
 Create new pages under the **content** directory.
-            
+
         build/
             content/
                 index.ejs
-            
+
+
 <br>
 Pages contain page includes and a page template declaration.
 <br>
@@ -43,7 +38,7 @@ Page data is stored under the **data** directory and injected into your componen
 <br>
 index.json
 
-        { 
+        {
         "title": "Hello World!",
             "info": {
                 "header": "Bowman",

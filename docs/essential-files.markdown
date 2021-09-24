@@ -1,16 +1,9 @@
----
-layout: default
-title: Essential Files
-nav_order: 8
-has_children: false
-permalink: /essential-files
----
-
 # Essential Files
 
 Bowman offers flexibility with how you want to structure your project files. However, there are a few critical files that are required for your site to work properly.
 
 ## Everything under /scripts
+
 These files contain Bowman's webpack configuration files, HTML markup generator scripts, and live server/reload configurations.
 
 ## The src/build directory
@@ -25,7 +18,7 @@ These files contain Bowman's webpack configuration files, HTML markup generator 
 Bowman's HTML generator looks for matching file names under **content/** and **data/** directories. A 1:1 relationship of content and data for a page must exist or the build process will fail.
 
 You can structure your pages however you'd like; as long as the directory structure of **content/** matches **data/** and vice versa.
-            
+
 ## ejs/layouts/
 
         src/
@@ -99,7 +92,7 @@ The webpack favicon plugin will look to the root directory for logo.png to gener
 
 <br>
 
-        { 
+        {
             "title": "Bowman",
             "description": "Simple static site generator powered by Node.js and Webpack",
             "keywords" : "bowman, static site generator, nodejs, javascript, webpack, browsersync"
@@ -120,7 +113,7 @@ site.json supplies metadata shared by pages in your project. Edit scripts/utils/
                     app.scss
 
 <br>
-Bowman recursively searches your project for js/scss files that **do not contain an underscore preceding** the file name. These files are used as Webpack's entry points for serving your code. 
+Bowman recursively searches your project for js/scss files that **do not contain an underscore preceding** the file name. These files are used as Webpack's entry points for serving your code.
 
 All other files **with underscores preceding** the file name can be structured to your liking, but should ultimately be called in your entry points for serving:
 

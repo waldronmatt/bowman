@@ -1,18 +1,9 @@
----
-layout: default
-title: Site Structure
-nav_order: 7
-has_children: true
-permalink: /site-structure/
----
-
 # Site Structure
 
         /
             dist/
             scripts/
             src/
-
 
 ## src/
 

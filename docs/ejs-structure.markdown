@@ -1,11 +1,3 @@
----
-layout: default
-title: EJS Structure
-nav_order: 1
-parent: Site Structure
-permalink: /site-structure/ejs-structure
----
-
 # EJS Structure
 
         src/

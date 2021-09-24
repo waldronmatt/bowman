@@ -1,13 +1,9 @@
----
-layout: default
-title: Page Includes
-nav_order: 4
----
-
 # Page Includes
+
 Page includes refer to your page markup.
 
 ## Partials / Components
+
 Reference page components or partials (groupings of components) for reuse:
 
         src/
@@ -49,5 +45,3 @@ features.ejs
                 <% }) %>
             </ul>
         </div>
-
-

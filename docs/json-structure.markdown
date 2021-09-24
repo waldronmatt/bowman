@@ -1,11 +1,3 @@
----
-layout: default
-title: JSON Structure
-nav_order: 1
-parent: Site Structure
-permalink: /site-structure/json-structure
----
-
 # JSON Structure
 
         src/

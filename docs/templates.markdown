@@ -1,9 +1,3 @@
----
-layout: default
-title: Page Templates
-nav_order: 5
----
-
 # Page Templates
 
 Page templates contain ejs calls to the main parts of your site (head, header, navigation, footer).

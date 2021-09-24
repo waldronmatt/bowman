@@ -1,11 +1,3 @@
----
-layout: default
-title: Script Structure
-nav_order: 1
-parent: Site Structure
-permalink: /site-structure/script-structure
----
-
 # JS Structure
 
         src/

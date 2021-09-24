@@ -1,11 +1,3 @@
----
-layout: default
-title: FAQ
-nav_order: 9
-has_children: false
-permalink: /faq
----
-
 # Frequently Asked Questions
 
 ## What is the minimum structure I need for Bowman to work?
@@ -47,7 +39,8 @@ permalink: /faq
         ignore.js
         logo.png
         package.json
-                
+
+
 ## How do I set up additional entry points and reference them in my page?
 
 To set up additional entry points, simply create a new js/scss file **without an underscore preceding** the filename. Bowman will recursively look for these files and feed into webpack, so the directory structure is completely up to you:
@@ -67,7 +60,6 @@ To reference the entry points, use the staticManifest ejs variable in your marku
         <link rel="stylesheet" href="<%= site.staticManifest[`static/css/folder/another-folder/my-custom-code.css`] %>">
 
         <script src="<%= site.staticManifest[`static/js/some-directory/my-custom-code.js`] %>"></script>
-
 
 ## How do I customize Bowman's default build structure?
 
@@ -95,7 +87,7 @@ A basic example:
         "pictures": [
             {
                 "picture": "some-folder/pic1"
-            }, 
+            },
             {
                 "picture": "some-folder/pic2"
             },

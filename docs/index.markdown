@@ -1,9 +1,3 @@
----
-layout: default
-title: Bowman
-nav_order: 1
----
-
 # Bowman
 
 ### A simple static site generator with an integrated toolchain for efficient development and delivery.
@@ -25,7 +19,8 @@ Install:
 Create project:
 
        create-bowman-starter -y
-        
+
+
 Install dependencies:
 
         npm install
@@ -39,5 +34,3 @@ Run dev environment:
 Build and serve for production:
 
         npm run build
-
-
